@@ -1,0 +1,412 @@
+restaurante,categoria,barrio,rating,reseña,sentimiento,fecha
+El Trapiche,Cocina Tradicional,Vía Argentina,2.6,Pedí un término medio y la carne llegó quemada.,negativo,2026-03-13
+El Trapiche,Cocina Tradicional,Vía Argentina,4.7,El mejor ceviche de la ciudad sin duda alguna.,positivo,2026-01-25
+Siete Mares,Mariscos,Calidonia,4.5,"Recomiendo el plato del día, siempre es una sorpresa agradable.",positivo,2025-07-11
+Super Gourmet,Casual,San Francisco,3.3,El lugar es bonito pero la comida no sorprendió.,neutral,2026-04-08
+Tantalo,Internacional,Casco Viejo,1.1,El menú tiene errores y varios platos no estaban disponibles.,negativo,2025-12-27
+Lung Fung,China,El Dorado,3.0,"Los ingredientes no sabían frescos, de mal sabor.",negativo,2026-05-02
+La Posta,Italiana,El Cangrejo,4.6,El chef hizo una presentación impecable de cada plato.,positivo,2025-08-29
+La Vespa,Italiana,Punta Paitilla,3.9,La comida es correcta pero los precios son elevados.,neutral,2026-06-01
+Madero,Steakhouse,Costa del Este,4.9,"La vista desde el rooftop es impresionante, y la comida igual.",positivo,2026-05-31
+La Posta,Italiana,El Cangrejo,3.4,"La comida estaba bien, nada del otro mundo.",neutral,2026-05-03
+La Vespa,Italiana,Punta Paitilla,1.5,"El aire acondicionado no funcionaba, hizo mucho calor.",negativo,2025-11-18
+Lung Fung,China,El Dorado,3.8,"El pulpo estaba perfectamente cocinado, una delicia.",positivo,2026-03-12
+Beirut,Libanesa,Obarrio,2.7,Pedí un término medio y la carne llegó quemada.,negativo,2025-08-12
+Beirut,Libanesa,Obarrio,4.4,"Los sabores son espectaculares, muy recomendado.",positivo,2025-12-25
+Siete Mares,Mariscos,Calidonia,4.3,El ambiente es acogedor y la comida deliciosa. Volveré pronto.,positivo,2026-03-26
+La Vespa,Italiana,Punta Paitilla,4.3,Un verdadero tesoro escondido en la ciudad.,positivo,2025-11-28
+Madero,Steakhouse,Costa del Este,2.2,El plato principal estaba salado y la atención pésima.,negativo,2025-08-31
+Diablicos,Cocina Panameña,Casco Viejo,4.8,Me encantó la variedad del menú y los precios justos.,positivo,2025-06-26
+Diablicos,Cocina Panameña,Casco Viejo,1.2,Las porciones son muy pequeñas para lo que cobran.,negativo,2026-04-24
+Tantalo,Internacional,Casco Viejo,4.2,"Cada visita es una experiencia única, sigan así.",positivo,2025-11-27
+El Trapiche,Cocina Tradicional,Vía Argentina,4.6,"Los sabores son espectaculares, muy recomendado.",positivo,2026-03-16
+Super Gourmet,Casual,San Francisco,3.0,"El aire acondicionado no funcionaba, hizo mucho calor.",negativo,2026-02-20
+Diablicos,Cocina Panameña,Casco Viejo,4.7,"Recomiendo el plato del día, siempre es una sorpresa agradable.",positivo,2025-12-17
+Gauchos,Argentina,Vía porras,3.1,Fui con expectativas altas y me pareció normal.,neutral,2025-12-11
+Maito,Cocina Panameña Fusión,Casco Viejo,2.1,La reservación no la respetaron y tuvimos que esperar.,negativo,2025-12-05
+Madero,Steakhouse,Costa del Este,5.0,Un lugar que todo amante de la buena comida debe visitar.,positivo,2025-07-07
+Tantalo,Internacional,Casco Viejo,4.8,Las pastas son hechas en casa y se nota la diferencia.,positivo,2026-01-27
+Madero,Steakhouse,Costa del Este,4.7,"Excelente comida, el servicio fue increíble. Definitivamente volveré.",positivo,2026-01-01
+Capital Bistro,Internacional,San Francisco,2.2,La cocina tardó más de una hora en servirnos.,negativo,2026-04-11
+La Vespa,Italiana,Punta Paitilla,3.7,Buena atención pero la comida tardó en llegar.,neutral,2026-05-18
+Intimo,Cocina Panameña,San Felipe,3.4,"El plato principal estaba bien, pero el postre decepcionó.",neutral,2025-11-28
+Tantalo,Internacional,Casco Viejo,3.3,"Tiene días buenos y días malos, es inconsistente.",neutral,2026-02-25
+Nacion Sushi,Japonesa,Multiplaza,3.1,"El plato principal estaba bien, pero el postre decepcionó.",neutral,2026-03-01
+La Cantina del Tigre,Mexicana,Casco Viejo,3.9,Buena atención pero la comida tardó en llegar.,neutral,2025-08-16
+Manolo Caracol,Caribeña,Casco Viejo,4.9,Las pastas son hechas en casa y se nota la diferencia.,positivo,2026-05-19
+Diablicos,Cocina Panameña,Casco Viejo,4.1,"El servicio fue normal, esperaba un poco más.",neutral,2026-03-05
+Maito,Cocina Panameña Fusión,Casco Viejo,5.0,De los mejores restaurantes que he visitado. Súper recomendado.,positivo,2026-04-20
+Nacion Sushi,Japonesa,Multiplaza,4.6,Un lugar perfecto para una cena especial. Todo de primera.,positivo,2026-05-28
+Intimo,Cocina Panameña,San Felipe,5.0,"El risotto cremoso y lleno de sabor, muy recomendado.",positivo,2026-05-21
+Tantalo,Internacional,Casco Viejo,2.3,"La comida estaba bien, nada del otro mundo.",neutral,2025-08-17
+Super Gourmet,Casual,San Francisco,1.5,"El servicio al cliente fue terrible, muy descorteses.",negativo,2025-10-25
+Gauchos,Argentina,Vía porras,4.5,"Los sabores son espectaculares, muy recomendado.",positivo,2025-07-20
+Siete Mares,Mariscos,Calidonia,4.8,La mejor experiencia gastronómica en Panamá. Todo perfecto.,positivo,2025-08-11
+Maito,Cocina Panameña Fusión,Casco Viejo,3.4,La decoración es bonita pero las mesas muy juntas.,neutral,2026-06-10
+Diablicos,Cocina Panameña,Casco Viejo,2.5,La reservación no la respetaron y tuvimos que esperar.,negativo,2026-05-03
+Pedro Mandinga,Caribeña Fusión,Casco Viejo,4.5,"Cada visita es una experiencia única, sigan así.",positivo,2025-10-21
+Nacion Sushi,Japonesa,Multiplaza,2.4,La reservación no la respetaron y tuvimos que esperar.,negativo,2025-07-04
+Siete Mares,Mariscos,Calidonia,4.2,El personal es muy atento y el ambiente muy agradable.,positivo,2025-06-23
+La Vespa,Italiana,Punta Paitilla,4.2,El tartar de atún es simplemente espectacular.,positivo,2025-08-16
+Beirut,Libanesa,Obarrio,2.5,Pedí un término medio y la carne llegó quemada.,negativo,2025-09-18
+La Posta,Italiana,El Cangrejo,3.9,"La atención fue regular, tardaron en servirnos.",neutral,2025-09-28
+Siete Mares,Mariscos,Calidonia,4.1,El ambiente es acogedor y la comida deliciosa. Volveré pronto.,positivo,2025-12-28
+Super Gourmet,Casual,San Francisco,1.7,Pedí un término medio y la carne llegó quemada.,negativo,2026-06-08
+Tantalo,Internacional,Casco Viejo,4.7,Los precios de los tragos son muy caros para lo que ofrecen.,neutral,2025-12-04
+Maito,Cocina Panameña Fusión,Casco Viejo,4.8,Un lugar que todo amante de la buena comida debe visitar.,positivo,2026-05-05
+La Posta,Italiana,El Cangrejo,3.9,"Buena opción si no quieres complicarte, pero hay mejores.",neutral,2026-06-12
+El Pavo Real,Española,El Cangrejo,2.5,"Algunos platos son mejores que otros, es inconsistente.",neutral,2026-06-04
+Lung Fung,China,El Dorado,2.9,Precios un poco altos para la porción que sirven.,neutral,2026-03-28
+Lung Fung,China,El Dorado,3.6,Los precios de los tragos son muy caros para lo que ofrecen.,neutral,2026-02-05
+Super Gourmet,Casual,San Francisco,4.7,Los mariscos frescos son lo mejor del menú.,positivo,2025-08-02
+Capital Bistro,Internacional,San Francisco,5.0,El mejor ceviche de la ciudad sin duda alguna.,positivo,2026-03-07
+Nacion Sushi,Japonesa,Multiplaza,4.4,La atención personalizada marca la diferencia.,positivo,2026-01-25
+La Posta,Italiana,El Cangrejo,3.0,El plato principal estaba salado y la atención pésima.,negativo,2025-10-25
+Pedro Mandinga,Caribeña Fusión,Casco Viejo,4.5,Un lugar que todo amante de la buena comida debe visitar.,positivo,2025-07-12
+Manolo Caracol,Caribeña,Casco Viejo,4.1,La próxima vez pediré algo diferente a ver si mejora.,neutral,2025-11-12
+Gauchos,Argentina,Vía porras,5.0,"El pulpo estaba perfectamente cocinado, una delicia.",positivo,2025-10-29
+El Trapiche,Cocina Tradicional,Vía Argentina,1.9,"Los ingredientes no sabían frescos, de mal sabor.",negativo,2025-09-10
+Lung Fung,China,El Dorado,4.0,"La atención fue regular, tardaron en servirnos.",neutral,2025-11-26
+Super Gourmet,Casual,San Francisco,3.9,"El risotto cremoso y lleno de sabor, muy recomendado.",positivo,2025-12-29
+Tantalo,Internacional,Casco Viejo,4.5,"El pulpo estaba perfectamente cocinado, una delicia.",positivo,2025-06-21
+Gauchos,Argentina,Vía porras,4.6,Increíble atención al cliente y platos exquisitos.,positivo,2025-10-14
+El Trapiche,Cocina Tradicional,Vía Argentina,4.5,La carta de vinos es impresionante y bien seleccionada.,positivo,2026-04-10
+Madero,Steakhouse,Costa del Este,5.0,"Los postres son increíbles, la torta de chocolate es la mejor.",positivo,2026-03-09
+Lung Fung,China,El Dorado,2.8,Las porciones son muy pequeñas para lo que cobran.,negativo,2026-05-08
+Siete Mares,Mariscos,Calidonia,3.4,La comida es correcta pero los precios son elevados.,neutral,2026-02-23
+Donde José,Alta Cocina,San Francisco,5.0,"El pulpo estaba perfectamente cocinado, una delicia.",positivo,2026-03-31
+Donde José,Alta Cocina,San Francisco,5.0,Increíble atención al cliente y platos exquisitos.,positivo,2026-06-07
+El Trapiche,Cocina Tradicional,Vía Argentina,4.8,La calidad de los ingredientes se nota en cada bocado.,positivo,2025-06-27
+El Trapiche,Cocina Tradicional,Vía Argentina,4.3,El mejor ceviche de la ciudad sin duda alguna.,positivo,2026-03-28
+Lung Fung,China,El Dorado,3.9,La carta de vinos es impresionante y bien seleccionada.,positivo,2026-05-29
+El Trapiche,Cocina Tradicional,Vía Argentina,4.4,Las pastas son hechas en casa y se nota la diferencia.,positivo,2025-07-08
+La Cantina del Tigre,Mexicana,Casco Viejo,5.0,La carta de vinos es impresionante y bien seleccionada.,positivo,2025-10-05
+Intimo,Cocina Panameña,San Felipe,5.0,"Recomiendo el plato del día, siempre es una sorpresa agradable.",positivo,2026-01-05
+Madero,Steakhouse,Costa del Este,4.9,"Cada visita es una experiencia única, sigan así.",positivo,2025-07-03
+Maito,Cocina Panameña Fusión,Casco Viejo,4.5,"El risotto cremoso y lleno de sabor, muy recomendado.",positivo,2026-05-15
+Manolo Caracol,Caribeña,Casco Viejo,4.6,Las pastas son hechas en casa y se nota la diferencia.,positivo,2026-06-01
+El Trapiche,Cocina Tradicional,Vía Argentina,4.7,Excelente relación calidad-precio. Muy satisfecho.,positivo,2026-01-18
+El Pavo Real,Española,El Cangrejo,2.2,Pedí un término medio y la carne llegó quemada.,negativo,2026-03-09
+Donde José,Alta Cocina,San Francisco,5.0,"Los postres son increíbles, la torta de chocolate es la mejor.",positivo,2026-02-26
+El Pavo Real,Española,El Cangrejo,2.6,La comida llegó fría y el servicio fue muy lento.,negativo,2026-02-06
+Maito,Cocina Panameña Fusión,Casco Viejo,4.9,"Los sabores son espectaculares, muy recomendado.",positivo,2025-11-05
+La Cantina del Tigre,Mexicana,Casco Viejo,3.0,La ubicación es conveniente pero el estacionamiento es difícil.,neutral,2025-09-22
+Tantalo,Internacional,Casco Viejo,4.8,Volvimos porque ya conocíamos la calidad y no defrauda.,positivo,2025-08-06
+Gauchos,Argentina,Vía porras,5.0,El personal es muy atento y el ambiente muy agradable.,positivo,2025-11-14
+Donde José,Alta Cocina,San Francisco,2.9,La ubicación es conveniente pero el estacionamiento es difícil.,neutral,2026-05-24
+Pedro Mandinga,Caribeña Fusión,Casco Viejo,4.7,El ambiente es perfecto para una cena romántica.,positivo,2025-07-29
+Nacion Sushi,Japonesa,Multiplaza,4.7,El chef hizo una presentación impecable de cada plato.,positivo,2025-12-20
+La Posta,Italiana,El Cangrejo,4.8,Increíble atención al cliente y platos exquisitos.,positivo,2025-09-09
+Donde José,Alta Cocina,San Francisco,5.0,"La vista desde el rooftop es impresionante, y la comida igual.",positivo,2025-08-02
+Madero,Steakhouse,Costa del Este,5.0,"El servicio es rápido y eficiente, la comida siempre fresca.",positivo,2025-06-28
+La Posta,Italiana,El Cangrejo,3.3,Fui con expectativas altas y me pareció normal.,neutral,2025-10-11
+Lung Fung,China,El Dorado,4.8,La carta de vinos es impresionante y bien seleccionada.,positivo,2025-11-22
+Pedro Mandinga,Caribeña Fusión,Casco Viejo,4.4,Volvimos porque ya conocíamos la calidad y no defrauda.,positivo,2026-02-23
+Pedro Mandinga,Caribeña Fusión,Casco Viejo,3.6,"Algunos platos son mejores que otros, es inconsistente.",neutral,2025-08-23
+Donde José,Alta Cocina,San Francisco,5.0,"El pulpo estaba perfectamente cocinado, una delicia.",positivo,2025-09-17
+Madero,Steakhouse,Costa del Este,4.6,Excelente relación calidad-precio. Muy satisfecho.,positivo,2026-01-31
+Madero,Steakhouse,Costa del Este,5.0,Un lugar que todo amante de la buena comida debe visitar.,positivo,2025-12-26
+La Cantina del Tigre,Mexicana,Casco Viejo,4.7,Un verdadero tesoro escondido en la ciudad.,positivo,2026-03-07
+Siete Mares,Mariscos,Calidonia,4.5,La próxima vez pediré algo diferente a ver si mejora.,neutral,2025-09-03
+Pedro Mandinga,Caribeña Fusión,Casco Viejo,4.8,"El pulpo estaba perfectamente cocinado, una delicia.",positivo,2026-02-22
+La Posta,Italiana,El Cangrejo,4.8,Un lugar que todo amante de la buena comida debe visitar.,positivo,2025-11-14
+La Posta,Italiana,El Cangrejo,3.9,"La comida estaba bien, nada del otro mundo.",neutral,2026-01-04
+Diablicos,Cocina Panameña,Casco Viejo,4.6,Un verdadero tesoro escondido en la ciudad.,positivo,2025-09-01
+Beirut,Libanesa,Obarrio,1.2,"El servicio al cliente fue terrible, muy descorteses.",negativo,2026-03-21
+El Pavo Real,Española,El Cangrejo,3.1,La decoración es bonita pero las mesas muy juntas.,neutral,2026-05-23
+Pedro Mandinga,Caribeña Fusión,Casco Viejo,2.6,"El servicio fue normal, esperaba un poco más.",neutral,2025-10-20
+Lung Fung,China,El Dorado,1.9,Los baños estaban sucios y el local descuidado.,negativo,2026-04-11
+Diablicos,Cocina Panameña,Casco Viejo,4.6,Los mariscos frescos son lo mejor del menú.,positivo,2025-08-09
+Nacion Sushi,Japonesa,Multiplaza,3.2,Tiene potencial pero necesita mejorar algunos detalles.,neutral,2025-08-12
+Intimo,Cocina Panameña,San Felipe,5.0,La atención personalizada marca la diferencia.,positivo,2026-02-17
+Diablicos,Cocina Panameña,Casco Viejo,4.4,Excelente relación calidad-precio. Muy satisfecho.,positivo,2025-10-07
+Capital Bistro,Internacional,San Francisco,4.5,Un lugar que todo amante de la buena comida debe visitar.,positivo,2025-12-27
+Tantalo,Internacional,Casco Viejo,3.5,"El plato principal estaba bien, pero el postre decepcionó.",neutral,2026-05-02
+Manolo Caracol,Caribeña,Casco Viejo,2.6,"La música estaba demasiado alta, no se podía hablar.",negativo,2026-02-25
+Beirut,Libanesa,Obarrio,4.4,Volvimos porque ya conocíamos la calidad y no defrauda.,positivo,2026-01-21
+Madero,Steakhouse,Costa del Este,5.0,"El pulpo estaba perfectamente cocinado, una delicia.",positivo,2026-04-20
+La Posta,Italiana,El Cangrejo,3.8,La decoración es bonita pero las mesas muy juntas.,neutral,2025-11-30
+Nacion Sushi,Japonesa,Multiplaza,5.0,"Los sabores son espectaculares, muy recomendado.",positivo,2025-10-04
+Siete Mares,Mariscos,Calidonia,4.2,"Es un restaurante promedio, ni excelente ni malo.",neutral,2026-05-04
+Super Gourmet,Casual,San Francisco,4.0,La decoración es bonita pero las mesas muy juntas.,neutral,2026-05-29
+Maito,Cocina Panameña Fusión,Casco Viejo,4.8,La atención personalizada marca la diferencia.,positivo,2025-08-15
+La Cantina del Tigre,Mexicana,Casco Viejo,2.8,Buena atención pero la comida tardó en llegar.,neutral,2026-02-06
+Manolo Caracol,Caribeña,Casco Viejo,5.0,De los mejores restaurantes que he visitado. Súper recomendado.,positivo,2026-05-13
+Madero,Steakhouse,Costa del Este,5.0,"Cada visita es una experiencia única, sigan así.",positivo,2025-10-14
+Maito,Cocina Panameña Fusión,Casco Viejo,4.9,Un lugar perfecto para una cena especial. Todo de primera.,positivo,2025-07-22
+Siete Mares,Mariscos,Calidonia,4.6,"El risotto cremoso y lleno de sabor, muy recomendado.",positivo,2025-08-15
+Donde José,Alta Cocina,San Francisco,5.0,Increíble atención al cliente y platos exquisitos.,positivo,2025-06-23
+El Pavo Real,Española,El Cangrejo,4.6,Un lugar perfecto para una cena especial. Todo de primera.,positivo,2025-09-25
+El Trapiche,Cocina Tradicional,Vía Argentina,4.4,Los cócteles de autor son innovadores y deliciosos.,positivo,2026-03-30
+La Vespa,Italiana,Punta Paitilla,4.1,Los precios de los tragos son muy caros para lo que ofrecen.,neutral,2025-10-15
+Intimo,Cocina Panameña,San Felipe,5.0,"Excelente comida, el servicio fue increíble. Definitivamente volveré.",positivo,2026-02-14
+Beirut,Libanesa,Obarrio,1.4,Me sentí ignorado por el personal durante toda la cena.,negativo,2025-09-18
+Madero,Steakhouse,Costa del Este,5.0,El chef hizo una presentación impecable de cada plato.,positivo,2025-09-21
+Nacion Sushi,Japonesa,Multiplaza,4.9,Los cócteles de autor son innovadores y deliciosos.,positivo,2026-03-27
+Diablicos,Cocina Panameña,Casco Viejo,2.6,"La atención fue regular, tardaron en servirnos.",neutral,2025-09-13
+Madero,Steakhouse,Costa del Este,3.6,"El plato principal estaba bien, pero el postre decepcionó.",neutral,2025-12-11
+Gauchos,Argentina,Vía porras,3.9,Volvimos porque ya conocíamos la calidad y no defrauda.,positivo,2025-11-07
+Nacion Sushi,Japonesa,Multiplaza,3.1,"La atención fue regular, tardaron en servirnos.",neutral,2026-04-10
+Gauchos,Argentina,Vía porras,4.3,El mejor ceviche de la ciudad sin duda alguna.,positivo,2026-05-30
+Intimo,Cocina Panameña,San Felipe,2.9,"Tiene días buenos y días malos, es inconsistente.",neutral,2025-11-17
+Capital Bistro,Internacional,San Francisco,4.7,"Recomiendo el plato del día, siempre es una sorpresa agradable.",positivo,2025-12-20
+Lung Fung,China,El Dorado,3.7,"Algunos platos son mejores que otros, es inconsistente.",neutral,2025-06-19
+El Trapiche,Cocina Tradicional,Vía Argentina,4.7,El personal es muy atento y el ambiente muy agradable.,positivo,2025-07-12
+La Vespa,Italiana,Punta Paitilla,3.3,"La comida estaba bien, nada del otro mundo.",neutral,2025-08-10
+La Cantina del Tigre,Mexicana,Casco Viejo,4.4,La atención personalizada marca la diferencia.,positivo,2025-08-05
+Gauchos,Argentina,Vía porras,3.0,Pedí un término medio y la carne llegó quemada.,negativo,2026-01-16
+Pedro Mandinga,Caribeña Fusión,Casco Viejo,4.4,De los mejores restaurantes que he visitado. Súper recomendado.,positivo,2025-10-03
+Nacion Sushi,Japonesa,Multiplaza,3.6,Tiene potencial pero necesita mejorar algunos detalles.,neutral,2025-06-26
+Diablicos,Cocina Panameña,Casco Viejo,4.2,Excelente relación calidad-precio. Muy satisfecho.,positivo,2025-07-16
+Maito,Cocina Panameña Fusión,Casco Viejo,2.9,El lugar es bonito pero la comida no sorprendió.,neutral,2026-06-10
+Donde José,Alta Cocina,San Francisco,5.0,"Excelente comida, el servicio fue increíble. Definitivamente volveré.",positivo,2025-09-05
+Maito,Cocina Panameña Fusión,Casco Viejo,3.6,"Algunos platos son mejores que otros, es inconsistente.",neutral,2026-05-17
+Tantalo,Internacional,Casco Viejo,2.4,El plato principal estaba salado y la atención pésima.,negativo,2025-11-03
+Madero,Steakhouse,Costa del Este,4.0,"La comida estaba bien, nada del otro mundo.",neutral,2026-01-24
+Siete Mares,Mariscos,Calidonia,4.1,El ambiente es acogedor y la comida deliciosa. Volveré pronto.,positivo,2025-12-30
+Madero,Steakhouse,Costa del Este,4.4,"La atención fue regular, tardaron en servirnos.",neutral,2025-11-14
+Manolo Caracol,Caribeña,Casco Viejo,5.0,El chef hizo una presentación impecable de cada plato.,positivo,2026-04-23
+Capital Bistro,Internacional,San Francisco,3.7,Buena atención pero la comida tardó en llegar.,neutral,2025-09-09
+Maito,Cocina Panameña Fusión,Casco Viejo,3.4,La comida es correcta pero los precios son elevados.,neutral,2026-05-20
+Donde José,Alta Cocina,San Francisco,5.0,Un lugar perfecto para una cena especial. Todo de primera.,positivo,2025-11-27
+Pedro Mandinga,Caribeña Fusión,Casco Viejo,3.8,La decoración es bonita pero las mesas muy juntas.,neutral,2026-05-30
+Intimo,Cocina Panameña,San Felipe,3.4,Tiene potencial pero necesita mejorar algunos detalles.,neutral,2026-01-29
+Tantalo,Internacional,Casco Viejo,4.1,Un verdadero tesoro escondido en la ciudad.,positivo,2026-05-18
+Diablicos,Cocina Panameña,Casco Viejo,4.9,De los mejores restaurantes que he visitado. Súper recomendado.,positivo,2025-07-08
+Intimo,Cocina Panameña,San Felipe,5.0,"La vista desde el rooftop es impresionante, y la comida igual.",positivo,2025-11-18
+Nacion Sushi,Japonesa,Multiplaza,3.8,"Es un restaurante promedio, ni excelente ni malo.",neutral,2025-10-24
+Nacion Sushi,Japonesa,Multiplaza,1.7,"El servicio al cliente fue terrible, muy descorteses.",negativo,2026-03-06
+Super Gourmet,Casual,San Francisco,2.4,"El aire acondicionado no funcionaba, hizo mucho calor.",negativo,2025-08-04
+Intimo,Cocina Panameña,San Felipe,3.1,"El plato principal estaba bien, pero el postre decepcionó.",neutral,2026-01-14
+Beirut,Libanesa,Obarrio,3.6,"El plato principal estaba bien, pero el postre decepcionó.",neutral,2025-12-27
+Nacion Sushi,Japonesa,Multiplaza,2.9,El plato principal estaba salado y la atención pésima.,negativo,2026-05-27
+La Vespa,Italiana,Punta Paitilla,2.7,"Tiene días buenos y días malos, es inconsistente.",neutral,2026-05-05
+La Cantina del Tigre,Mexicana,Casco Viejo,4.2,Volvimos porque ya conocíamos la calidad y no defrauda.,positivo,2025-09-13
+Lung Fung,China,El Dorado,3.5,Me sentí ignorado por el personal durante toda la cena.,negativo,2025-09-19
+El Trapiche,Cocina Tradicional,Vía Argentina,4.7,Volvimos porque ya conocíamos la calidad y no defrauda.,positivo,2025-10-27
+Gauchos,Argentina,Vía porras,1.4,Los precios son excesivos para la calidad que ofrecen.,negativo,2025-08-17
+Nacion Sushi,Japonesa,Multiplaza,2.7,Tiene potencial pero necesita mejorar algunos detalles.,neutral,2025-08-28
+El Pavo Real,Española,El Cangrejo,4.2,El ambiente es acogedor y la comida deliciosa. Volveré pronto.,positivo,2025-08-16
+Donde José,Alta Cocina,San Francisco,2.9,El plato principal estaba salado y la atención pésima.,negativo,2026-03-05
+Diablicos,Cocina Panameña,Casco Viejo,2.0,"Definitivamente sobrevalorado, hay opciones mejores.",negativo,2025-11-10
+Nacion Sushi,Japonesa,Multiplaza,5.0,Un lugar que todo amante de la buena comida debe visitar.,positivo,2025-08-08
+Lung Fung,China,El Dorado,2.5,"La comida estaba bien, nada del otro mundo.",neutral,2026-02-06
+El Pavo Real,Española,El Cangrejo,2.7,"Buena opción si no quieres complicarte, pero hay mejores.",neutral,2025-08-12
+El Trapiche,Cocina Tradicional,Vía Argentina,4.2,"Recomiendo el plato del día, siempre es una sorpresa agradable.",positivo,2025-10-24
+Nacion Sushi,Japonesa,Multiplaza,4.8,"El pulpo estaba perfectamente cocinado, una delicia.",positivo,2025-09-20
+El Trapiche,Cocina Tradicional,Vía Argentina,4.0,"Buena opción si no quieres complicarte, pero hay mejores.",neutral,2025-12-19
+Maito,Cocina Panameña Fusión,Casco Viejo,4.7,El personal es muy atento y el ambiente muy agradable.,positivo,2025-09-11
+La Cantina del Tigre,Mexicana,Casco Viejo,4.3,Excelente relación calidad-precio. Muy satisfecho.,positivo,2025-08-01
+Capital Bistro,Internacional,San Francisco,2.9,El ambiente era ruidoso y no se podía conversar.,negativo,2026-02-09
+La Posta,Italiana,El Cangrejo,3.3,La próxima vez pediré algo diferente a ver si mejora.,neutral,2025-06-25
+Capital Bistro,Internacional,San Francisco,3.9,"El servicio fue normal, esperaba un poco más.",neutral,2026-06-10
+Beirut,Libanesa,Obarrio,3.2,El menú tiene opciones interesantes pero limitadas.,neutral,2026-06-02
+El Trapiche,Cocina Tradicional,Vía Argentina,4.2,"Recomiendo el plato del día, siempre es una sorpresa agradable.",positivo,2025-10-24
+El Pavo Real,Española,El Cangrejo,2.4,"Es un restaurante promedio, ni excelente ni malo.",neutral,2025-12-27
+Tantalo,Internacional,Casco Viejo,4.0,El tartar de atún es simplemente espectacular.,positivo,2026-06-03
+Nacion Sushi,Japonesa,Multiplaza,4.1,"El servicio es rápido y eficiente, la comida siempre fresca.",positivo,2025-07-22
+Gauchos,Argentina,Vía porras,4.0,El ambiente es agradable pero un poco ruidoso.,neutral,2025-07-08
+Donde José,Alta Cocina,San Francisco,2.5,La cocina tardó más de una hora en servirnos.,negativo,2025-09-12
+Pedro Mandinga,Caribeña Fusión,Casco Viejo,3.9,Precios un poco altos para la porción que sirven.,neutral,2025-11-14
+Intimo,Cocina Panameña,San Felipe,5.0,Me encantó la variedad del menú y los precios justos.,positivo,2025-09-17
+Siete Mares,Mariscos,Calidonia,4.4,El ambiente es perfecto para una cena romántica.,positivo,2025-11-17
+Nacion Sushi,Japonesa,Multiplaza,3.2,"Es un restaurante promedio, ni excelente ni malo.",neutral,2026-05-25
+Madero,Steakhouse,Costa del Este,4.8,Un lugar que todo amante de la buena comida debe visitar.,positivo,2025-12-09
+Diablicos,Cocina Panameña,Casco Viejo,3.9,Buena atención pero la comida tardó en llegar.,neutral,2025-08-09
+Donde José,Alta Cocina,San Francisco,5.0,El ambiente es perfecto para una cena romántica.,positivo,2026-03-19
+Manolo Caracol,Caribeña,Casco Viejo,4.9,Me encantó la variedad del menú y los precios justos.,positivo,2025-12-07
+Madero,Steakhouse,Costa del Este,2.5,Pedí un término medio y la carne llegó quemada.,negativo,2025-06-27
+Super Gourmet,Casual,San Francisco,3.4,La decoración es bonita pero las mesas muy juntas.,neutral,2025-06-16
+Tantalo,Internacional,Casco Viejo,4.5,Un verdadero tesoro escondido en la ciudad.,positivo,2026-06-10
+Donde José,Alta Cocina,San Francisco,5.0,La carta de vinos es impresionante y bien seleccionada.,positivo,2025-11-23
+La Posta,Italiana,El Cangrejo,4.2,"La comida estaba bien, nada del otro mundo.",neutral,2026-03-22
+Siete Mares,Mariscos,Calidonia,1.8,No volveré. La comida no cumplió con las expectativas.,negativo,2025-10-26
+Lung Fung,China,El Dorado,3.4,"La comida estaba bien, nada del otro mundo.",neutral,2025-11-03
+El Pavo Real,Española,El Cangrejo,2.0,El menú tiene errores y varios platos no estaban disponibles.,negativo,2026-01-03
+Tantalo,Internacional,Casco Viejo,5.0,Volvimos porque ya conocíamos la calidad y no defrauda.,positivo,2025-12-07
+Diablicos,Cocina Panameña,Casco Viejo,4.4,"La vista desde el rooftop es impresionante, y la comida igual.",positivo,2026-01-25
+Lung Fung,China,El Dorado,4.8,La atención personalizada marca la diferencia.,positivo,2025-11-08
+Intimo,Cocina Panameña,San Felipe,5.0,Increíble atención al cliente y platos exquisitos.,positivo,2026-01-19
+Super Gourmet,Casual,San Francisco,4.1,La ubicación es conveniente pero el estacionamiento es difícil.,neutral,2026-02-16
+Tantalo,Internacional,Casco Viejo,3.4,El lugar es bonito pero la comida no sorprendió.,neutral,2025-10-25
+La Cantina del Tigre,Mexicana,Casco Viejo,4.4,El mejor ceviche de la ciudad sin duda alguna.,positivo,2025-06-14
+Gauchos,Argentina,Vía porras,3.3,"La comida estaba bien, nada del otro mundo.",neutral,2025-06-14
+Capital Bistro,Internacional,San Francisco,4.7,"Los postres son increíbles, la torta de chocolate es la mejor.",positivo,2026-05-19
+Beirut,Libanesa,Obarrio,3.0,"Es un restaurante promedio, ni excelente ni malo.",neutral,2026-02-28
+La Posta,Italiana,El Cangrejo,4.1,El ambiente es agradable pero un poco ruidoso.,neutral,2025-12-30
+Tantalo,Internacional,Casco Viejo,5.0,"El servicio es rápido y eficiente, la comida siempre fresca.",positivo,2025-08-12
+Nacion Sushi,Japonesa,Multiplaza,4.8,"Los sabores son espectaculares, muy recomendado.",positivo,2025-09-23
+Intimo,Cocina Panameña,San Felipe,4.7,Excelente relación calidad-precio. Muy satisfecho.,positivo,2025-08-22
+Pedro Mandinga,Caribeña Fusión,Casco Viejo,2.7,La cocina tardó más de una hora en servirnos.,negativo,2025-12-15
+Maito,Cocina Panameña Fusión,Casco Viejo,5.0,Los mariscos frescos son lo mejor del menú.,positivo,2025-09-08
+Lung Fung,China,El Dorado,3.2,Los precios de los tragos son muy caros para lo que ofrecen.,neutral,2025-11-25
+La Cantina del Tigre,Mexicana,Casco Viejo,4.3,Las pastas son hechas en casa y se nota la diferencia.,positivo,2025-11-21
+Capital Bistro,Internacional,San Francisco,3.3,"El plato principal estaba bien, pero el postre decepcionó.",neutral,2025-10-04
+La Vespa,Italiana,Punta Paitilla,3.5,"El plato principal estaba bien, pero el postre decepcionó.",neutral,2026-05-16
+El Pavo Real,Española,El Cangrejo,4.5,Las pastas son hechas en casa y se nota la diferencia.,positivo,2026-01-02
+Maito,Cocina Panameña Fusión,Casco Viejo,4.9,La carta de vinos es impresionante y bien seleccionada.,positivo,2025-12-04
+El Pavo Real,Española,El Cangrejo,3.1,La próxima vez pediré algo diferente a ver si mejora.,neutral,2025-12-18
+Pedro Mandinga,Caribeña Fusión,Casco Viejo,4.3,"Los postres son increíbles, la torta de chocolate es la mejor.",positivo,2026-05-08
+Lung Fung,China,El Dorado,3.4,La reservación no la respetaron y tuvimos que esperar.,negativo,2026-06-11
+Capital Bistro,Internacional,San Francisco,5.0,El ambiente es perfecto para una cena romántica.,positivo,2026-01-13
+El Pavo Real,Española,El Cangrejo,3.5,El menú tiene opciones interesantes pero limitadas.,neutral,2026-02-12
+La Vespa,Italiana,Punta Paitilla,4.4,El personal es muy atento y el ambiente muy agradable.,positivo,2026-04-02
+Manolo Caracol,Caribeña,Casco Viejo,2.2,La comida llegó fría y el servicio fue muy lento.,negativo,2025-08-19
+El Trapiche,Cocina Tradicional,Vía Argentina,4.5,Volvimos porque ya conocíamos la calidad y no defrauda.,positivo,2025-06-21
+Manolo Caracol,Caribeña,Casco Viejo,4.8,Un lugar perfecto para una cena especial. Todo de primera.,positivo,2025-08-22
+Manolo Caracol,Caribeña,Casco Viejo,4.6,De los mejores restaurantes que he visitado. Súper recomendado.,positivo,2026-01-01
+Capital Bistro,Internacional,San Francisco,4.8,"Cada visita es una experiencia única, sigan así.",positivo,2026-04-05
+Lung Fung,China,El Dorado,3.1,"El servicio al cliente fue terrible, muy descorteses.",negativo,2026-05-09
+La Posta,Italiana,El Cangrejo,4.6,Los cócteles de autor son innovadores y deliciosos.,positivo,2025-06-25
+Donde José,Alta Cocina,San Francisco,5.0,Me encantó la variedad del menú y los precios justos.,positivo,2026-03-16
+Lung Fung,China,El Dorado,3.4,"El aire acondicionado no funcionaba, hizo mucho calor.",negativo,2026-01-29
+Gauchos,Argentina,Vía porras,4.4,El personal es muy atento y el ambiente muy agradable.,positivo,2025-09-04
+Beirut,Libanesa,Obarrio,3.4,Buena atención pero la comida tardó en llegar.,neutral,2025-10-25
+La Vespa,Italiana,Punta Paitilla,2.3,No volveré. La comida no cumplió con las expectativas.,negativo,2025-07-20
+La Cantina del Tigre,Mexicana,Casco Viejo,4.6,"Los sabores son espectaculares, muy recomendado.",positivo,2025-09-12
+Manolo Caracol,Caribeña,Casco Viejo,4.7,"La vista desde el rooftop es impresionante, y la comida igual.",positivo,2025-06-29
+Super Gourmet,Casual,San Francisco,3.9,La carta de vinos es impresionante y bien seleccionada.,positivo,2025-11-29
+La Vespa,Italiana,Punta Paitilla,2.2,"La música estaba demasiado alta, no se podía hablar.",negativo,2025-07-19
+El Trapiche,Cocina Tradicional,Vía Argentina,4.7,El mejor ceviche de la ciudad sin duda alguna.,positivo,2026-05-21
+La Cantina del Tigre,Mexicana,Casco Viejo,3.5,Los precios de los tragos son muy caros para lo que ofrecen.,neutral,2025-06-16
+La Posta,Italiana,El Cangrejo,3.2,"El servicio fue normal, esperaba un poco más.",neutral,2025-08-09
+Pedro Mandinga,Caribeña Fusión,Casco Viejo,2.7,Los precios son excesivos para la calidad que ofrecen.,negativo,2026-04-08
+Beirut,Libanesa,Obarrio,2.5,La atención fue pésima desde la llegada hasta la salida.,negativo,2026-01-30
+La Vespa,Italiana,Punta Paitilla,2.7,Las porciones son muy pequeñas para lo que cobran.,negativo,2025-10-26
+Super Gourmet,Casual,San Francisco,3.7,"Los postres son increíbles, la torta de chocolate es la mejor.",positivo,2025-12-12
+El Pavo Real,Española,El Cangrejo,4.2,"La vista desde el rooftop es impresionante, y la comida igual.",positivo,2025-08-04
+Tantalo,Internacional,Casco Viejo,4.1,Fui con expectativas altas y me pareció normal.,neutral,2026-06-07
+La Vespa,Italiana,Punta Paitilla,3.9,"El plato principal estaba bien, pero el postre decepcionó.",neutral,2025-12-25
+La Posta,Italiana,El Cangrejo,1.2,La comida llegó fría y el servicio fue muy lento.,negativo,2025-07-25
+La Vespa,Italiana,Punta Paitilla,3.9,"El risotto cremoso y lleno de sabor, muy recomendado.",positivo,2026-06-09
+Manolo Caracol,Caribeña,Casco Viejo,3.1,Fui con expectativas altas y me pareció normal.,neutral,2026-04-11
+Tantalo,Internacional,Casco Viejo,4.5,La carta de vinos es impresionante y bien seleccionada.,positivo,2026-03-02
+Capital Bistro,Internacional,San Francisco,3.6,"Buena opción si no quieres complicarte, pero hay mejores.",neutral,2025-07-14
+Super Gourmet,Casual,San Francisco,3.3,La próxima vez pediré algo diferente a ver si mejora.,neutral,2025-09-21
+Capital Bistro,Internacional,San Francisco,3.7,Fui con expectativas altas y me pareció normal.,neutral,2025-12-06
+Super Gourmet,Casual,San Francisco,3.8,"Algunos platos son mejores que otros, es inconsistente.",neutral,2026-05-04
+Diablicos,Cocina Panameña,Casco Viejo,2.8,"La música estaba demasiado alta, no se podía hablar.",negativo,2026-03-14
+Tantalo,Internacional,Casco Viejo,4.5,Un lugar que todo amante de la buena comida debe visitar.,positivo,2026-05-05
+Maito,Cocina Panameña Fusión,Casco Viejo,4.6,De los mejores restaurantes que he visitado. Súper recomendado.,positivo,2026-05-03
+El Pavo Real,Española,El Cangrejo,3.5,La ubicación es conveniente pero el estacionamiento es difícil.,neutral,2025-07-25
+El Pavo Real,Española,El Cangrejo,4.0,Tiene potencial pero necesita mejorar algunos detalles.,neutral,2025-12-14
+Intimo,Cocina Panameña,San Felipe,4.8,El chef hizo una presentación impecable de cada plato.,positivo,2025-08-13
+Diablicos,Cocina Panameña,Casco Viejo,4.1,"Buena opción si no quieres complicarte, pero hay mejores.",neutral,2025-06-17
+Maito,Cocina Panameña Fusión,Casco Viejo,5.0,"Excelente comida, el servicio fue increíble. Definitivamente volveré.",positivo,2025-11-12
+Capital Bistro,Internacional,San Francisco,4.1,"Algunos platos son mejores que otros, es inconsistente.",neutral,2026-01-27
+Siete Mares,Mariscos,Calidonia,4.7,Un lugar que todo amante de la buena comida debe visitar.,positivo,2025-06-24
+Super Gourmet,Casual,San Francisco,2.8,Precios un poco altos para la porción que sirven.,neutral,2026-05-17
+La Posta,Italiana,El Cangrejo,4.6,Volvimos porque ya conocíamos la calidad y no defrauda.,positivo,2025-07-04
+Maito,Cocina Panameña Fusión,Casco Viejo,3.0,"El servicio fue normal, esperaba un poco más.",neutral,2025-11-16
+Siete Mares,Mariscos,Calidonia,4.0,Un lugar que todo amante de la buena comida debe visitar.,positivo,2026-02-10
+Diablicos,Cocina Panameña,Casco Viejo,2.1,El menú tiene errores y varios platos no estaban disponibles.,negativo,2025-11-18
+Intimo,Cocina Panameña,San Felipe,5.0,Increíble atención al cliente y platos exquisitos.,positivo,2026-05-09
+La Vespa,Italiana,Punta Paitilla,3.5,"La comida estaba bien, nada del otro mundo.",neutral,2025-08-11
+Pedro Mandinga,Caribeña Fusión,Casco Viejo,4.6,El tartar de atún es simplemente espectacular.,positivo,2026-02-15
+Lung Fung,China,El Dorado,4.2,El mejor ceviche de la ciudad sin duda alguna.,positivo,2026-02-19
+Maito,Cocina Panameña Fusión,Casco Viejo,4.9,La mejor experiencia gastronómica en Panamá. Todo perfecto.,positivo,2025-09-19
+Tantalo,Internacional,Casco Viejo,4.4,La calidad de los ingredientes se nota en cada bocado.,positivo,2025-08-24
+Madero,Steakhouse,Costa del Este,2.7,La decoración es bonita pero las mesas muy juntas.,neutral,2026-05-15
+Beirut,Libanesa,Obarrio,4.0,Las pastas son hechas en casa y se nota la diferencia.,positivo,2026-04-25
+Madero,Steakhouse,Costa del Este,2.6,Buena atención pero la comida tardó en llegar.,neutral,2025-10-07
+Maito,Cocina Panameña Fusión,Casco Viejo,4.8,El ambiente es acogedor y la comida deliciosa. Volveré pronto.,positivo,2026-02-15
+Tantalo,Internacional,Casco Viejo,4.4,El tartar de atún es simplemente espectacular.,positivo,2025-07-18
+Capital Bistro,Internacional,San Francisco,4.6,De los mejores restaurantes que he visitado. Súper recomendado.,positivo,2025-08-14
+Intimo,Cocina Panameña,San Felipe,5.0,"Cada visita es una experiencia única, sigan así.",positivo,2025-10-02
+La Vespa,Italiana,Punta Paitilla,3.3,Me sentí ignorado por el personal durante toda la cena.,negativo,2025-10-25
+Nacion Sushi,Japonesa,Multiplaza,4.6,Los mariscos frescos son lo mejor del menú.,positivo,2025-09-17
+El Pavo Real,Española,El Cangrejo,4.6,"Los sabores son espectaculares, muy recomendado.",positivo,2025-11-13
+Manolo Caracol,Caribeña,Casco Viejo,3.6,Fui con expectativas altas y me pareció normal.,neutral,2026-04-30
+La Cantina del Tigre,Mexicana,Casco Viejo,3.9,Los precios de los tragos son muy caros para lo que ofrecen.,neutral,2026-04-20
+Donde José,Alta Cocina,San Francisco,2.7,"La atención fue regular, tardaron en servirnos.",neutral,2025-11-27
+La Cantina del Tigre,Mexicana,Casco Viejo,4.3,Un verdadero tesoro escondido en la ciudad.,positivo,2026-05-15
+Gauchos,Argentina,Vía porras,4.7,El tartar de atún es simplemente espectacular.,positivo,2026-03-17
+Beirut,Libanesa,Obarrio,3.7,Los precios de los tragos son muy caros para lo que ofrecen.,neutral,2026-02-22
+Intimo,Cocina Panameña,San Felipe,5.0,Los cócteles de autor son innovadores y deliciosos.,positivo,2025-11-06
+Intimo,Cocina Panameña,San Felipe,5.0,El ambiente es perfecto para una cena romántica.,positivo,2026-05-05
+Pedro Mandinga,Caribeña Fusión,Casco Viejo,2.9,"Algunos platos son mejores que otros, es inconsistente.",neutral,2025-11-22
+El Pavo Real,Española,El Cangrejo,1.5,El plato principal estaba salado y la atención pésima.,negativo,2025-11-28
+Pedro Mandinga,Caribeña Fusión,Casco Viejo,4.6,Las pastas son hechas en casa y se nota la diferencia.,positivo,2026-06-07
+Siete Mares,Mariscos,Calidonia,4.5,Increíble atención al cliente y platos exquisitos.,positivo,2026-05-22
+Beirut,Libanesa,Obarrio,3.5,"El plato principal estaba bien, pero el postre decepcionó.",neutral,2025-08-21
+Manolo Caracol,Caribeña,Casco Viejo,3.7,Tiene potencial pero necesita mejorar algunos detalles.,neutral,2026-05-20
+Beirut,Libanesa,Obarrio,4.8,El tartar de atún es simplemente espectacular.,positivo,2026-01-05
+Madero,Steakhouse,Costa del Este,4.7,"Los sabores son espectaculares, muy recomendado.",positivo,2025-09-04
+Gauchos,Argentina,Vía porras,4.2,"Cada visita es una experiencia única, sigan así.",positivo,2025-09-20
+Beirut,Libanesa,Obarrio,4.6,De los mejores restaurantes que he visitado. Súper recomendado.,positivo,2026-03-12
+Donde José,Alta Cocina,San Francisco,5.0,La calidad de los ingredientes se nota en cada bocado.,positivo,2026-02-13
+Diablicos,Cocina Panameña,Casco Viejo,4.0,"Es un restaurante promedio, ni excelente ni malo.",neutral,2026-03-26
+Maito,Cocina Panameña Fusión,Casco Viejo,5.0,Un verdadero tesoro escondido en la ciudad.,positivo,2025-06-24
+Beirut,Libanesa,Obarrio,3.0,La próxima vez pediré algo diferente a ver si mejora.,neutral,2026-04-07
+Maito,Cocina Panameña Fusión,Casco Viejo,4.7,"El risotto cremoso y lleno de sabor, muy recomendado.",positivo,2025-07-24
+Gauchos,Argentina,Vía porras,3.9,La comida es correcta pero los precios son elevados.,neutral,2026-05-14
+Lung Fung,China,El Dorado,3.6,La carta de vinos es impresionante y bien seleccionada.,positivo,2026-04-04
+Donde José,Alta Cocina,San Francisco,5.0,La calidad de los ingredientes se nota en cada bocado.,positivo,2026-02-28
+El Pavo Real,Española,El Cangrejo,4.3,El personal es muy atento y el ambiente muy agradable.,positivo,2026-02-08
+Manolo Caracol,Caribeña,Casco Viejo,5.0,Volvimos porque ya conocíamos la calidad y no defrauda.,positivo,2025-12-27
+Capital Bistro,Internacional,San Francisco,3.7,El lugar es bonito pero la comida no sorprendió.,neutral,2026-01-12
+La Cantina del Tigre,Mexicana,Casco Viejo,4.6,Las pastas son hechas en casa y se nota la diferencia.,positivo,2026-02-15
+Siete Mares,Mariscos,Calidonia,2.9,Las porciones son muy pequeñas para lo que cobran.,negativo,2025-07-15
+El Trapiche,Cocina Tradicional,Vía Argentina,4.3,Volvimos porque ya conocíamos la calidad y no defrauda.,positivo,2026-05-17
+La Cantina del Tigre,Mexicana,Casco Viejo,3.7,"Tiene días buenos y días malos, es inconsistente.",neutral,2026-06-08
+Manolo Caracol,Caribeña,Casco Viejo,4.9,"Los postres son increíbles, la torta de chocolate es la mejor.",positivo,2025-06-14
+Madero,Steakhouse,Costa del Este,5.0,Los mariscos frescos son lo mejor del menú.,positivo,2026-06-08
+Lung Fung,China,El Dorado,3.3,Los precios de los tragos son muy caros para lo que ofrecen.,neutral,2026-03-28
+La Posta,Italiana,El Cangrejo,4.9,Un lugar que todo amante de la buena comida debe visitar.,positivo,2026-02-26
+La Vespa,Italiana,Punta Paitilla,4.3,"El risotto cremoso y lleno de sabor, muy recomendado.",positivo,2026-04-24
+Donde José,Alta Cocina,San Francisco,4.9,Los cócteles de autor son innovadores y deliciosos.,positivo,2025-08-19
+Pedro Mandinga,Caribeña Fusión,Casco Viejo,4.0,El ambiente es agradable pero un poco ruidoso.,neutral,2026-03-22
+Donde José,Alta Cocina,San Francisco,4.8,Las pastas son hechas en casa y se nota la diferencia.,positivo,2025-08-18
+Manolo Caracol,Caribeña,Casco Viejo,4.4,La ubicación es conveniente pero el estacionamiento es difícil.,neutral,2025-07-08
+Manolo Caracol,Caribeña,Casco Viejo,4.5,Me encantó la variedad del menú y los precios justos.,positivo,2026-02-21
+Beirut,Libanesa,Obarrio,4.4,"Los sabores son espectaculares, muy recomendado.",positivo,2025-09-06
+Diablicos,Cocina Panameña,Casco Viejo,1.3,La reservación no la respetaron y tuvimos que esperar.,negativo,2025-07-25
+Beirut,Libanesa,Obarrio,3.8,Buena atención pero la comida tardó en llegar.,neutral,2026-05-10
+Lung Fung,China,El Dorado,4.1,"La comida estaba bien, nada del otro mundo.",neutral,2025-07-13
+La Vespa,Italiana,Punta Paitilla,3.6,"Es un restaurante promedio, ni excelente ni malo.",neutral,2025-10-27
+Diablicos,Cocina Panameña,Casco Viejo,4.5,Excelente relación calidad-precio. Muy satisfecho.,positivo,2026-01-08
+Manolo Caracol,Caribeña,Casco Viejo,5.0,"El pulpo estaba perfectamente cocinado, una delicia.",positivo,2026-01-02
+Siete Mares,Mariscos,Calidonia,4.2,Las pastas son hechas en casa y se nota la diferencia.,positivo,2025-09-24
+Gauchos,Argentina,Vía porras,4.4,"Los postres son increíbles, la torta de chocolate es la mejor.",positivo,2026-01-01
+Beirut,Libanesa,Obarrio,4.1,La decoración es bonita pero las mesas muy juntas.,neutral,2025-09-01
+Lung Fung,China,El Dorado,3.0,Los precios son excesivos para la calidad que ofrecen.,negativo,2026-04-04
+La Posta,Italiana,El Cangrejo,4.8,El tartar de atún es simplemente espectacular.,positivo,2026-04-02
+Capital Bistro,Internacional,San Francisco,4.4,La atención personalizada marca la diferencia.,positivo,2026-05-27
+Donde José,Alta Cocina,San Francisco,5.0,El chef hizo una presentación impecable de cada plato.,positivo,2025-09-05
+Nacion Sushi,Japonesa,Multiplaza,2.7,"La música estaba demasiado alta, no se podía hablar.",negativo,2025-09-01
+Tantalo,Internacional,Casco Viejo,4.0,La próxima vez pediré algo diferente a ver si mejora.,neutral,2025-12-29
+Gauchos,Argentina,Vía porras,1.7,No volveré. La comida no cumplió con las expectativas.,negativo,2025-08-19
+Tantalo,Internacional,Casco Viejo,3.2,El lugar es bonito pero la comida no sorprendió.,neutral,2025-07-29
+La Vespa,Italiana,Punta Paitilla,4.1,La atención personalizada marca la diferencia.,positivo,2025-08-21
+Madero,Steakhouse,Costa del Este,2.9,Precios un poco altos para la porción que sirven.,neutral,2025-07-10
+Maito,Cocina Panameña Fusión,Casco Viejo,5.0,"Los sabores son espectaculares, muy recomendado.",positivo,2026-03-24
+Intimo,Cocina Panameña,San Felipe,4.4,"Cada visita es una experiencia única, sigan así.",positivo,2025-10-08
+Capital Bistro,Internacional,San Francisco,3.4,Los precios de los tragos son muy caros para lo que ofrecen.,neutral,2025-08-02
+Super Gourmet,Casual,San Francisco,3.0,La cocina tardó más de una hora en servirnos.,negativo,2026-06-04
+El Trapiche,Cocina Tradicional,Vía Argentina,4.5,La atención personalizada marca la diferencia.,positivo,2025-06-22
+Siete Mares,Mariscos,Calidonia,4.6,"El servicio fue normal, esperaba un poco más.",neutral,2025-12-14
+Lung Fung,China,El Dorado,4.4,"El pulpo estaba perfectamente cocinado, una delicia.",positivo,2026-03-15
+Siete Mares,Mariscos,Calidonia,4.3,De los mejores restaurantes que he visitado. Súper recomendado.,positivo,2026-05-15
+Siete Mares,Mariscos,Calidonia,4.6,Me encantó la variedad del menú y los precios justos.,positivo,2025-06-16
+Maito,Cocina Panameña Fusión,Casco Viejo,4.9,El mejor ceviche de la ciudad sin duda alguna.,positivo,2025-11-26
+El Pavo Real,Española,El Cangrejo,4.0,"Buena opción si no quieres complicarte, pero hay mejores.",neutral,2025-07-28
+La Vespa,Italiana,Punta Paitilla,3.7,La decoración es bonita pero las mesas muy juntas.,neutral,2025-10-14
+Super Gourmet,Casual,San Francisco,4.2,Me encantó la variedad del menú y los precios justos.,positivo,2026-04-26
+El Trapiche,Cocina Tradicional,Vía Argentina,4.9,Un verdadero tesoro escondido en la ciudad.,positivo,2026-06-10
+El Pavo Real,Española,El Cangrejo,2.2,"Caro para lo que ofrecen, no lo recomiendo.",negativo,2025-08-15
+El Pavo Real,Española,El Cangrejo,4.4,Un verdadero tesoro escondido en la ciudad.,positivo,2025-06-19
+Diablicos,Cocina Panameña,Casco Viejo,3.4,Fui con expectativas altas y me pareció normal.,neutral,2026-04-09
+El Trapiche,Cocina Tradicional,Vía Argentina,2.9,No volveré. La comida no cumplió con las expectativas.,negativo,2025-12-14
+Super Gourmet,Casual,San Francisco,3.6,Tiene potencial pero necesita mejorar algunos detalles.,neutral,2026-02-21
+Madero,Steakhouse,Costa del Este,3.4,La decoración es bonita pero las mesas muy juntas.,neutral,2026-02-06
+La Cantina del Tigre,Mexicana,Casco Viejo,3.4,La decoración es bonita pero las mesas muy juntas.,neutral,2025-08-09
+Intimo,Cocina Panameña,San Felipe,5.0,"El pulpo estaba perfectamente cocinado, una delicia.",positivo,2025-09-18
+El Trapiche,Cocina Tradicional,Vía Argentina,3.2,La comida es correcta pero los precios son elevados.,neutral,2025-10-24
+Donde José,Alta Cocina,San Francisco,4.0,Buena atención pero la comida tardó en llegar.,neutral,2025-09-12
+La Posta,Italiana,El Cangrejo,5.0,Las pastas son hechas en casa y se nota la diferencia.,positivo,2026-01-09
+Madero,Steakhouse,Costa del Este,4.9,Las pastas son hechas en casa y se nota la diferencia.,positivo,2026-03-30
+Nacion Sushi,Japonesa,Multiplaza,4.9,"Recomiendo el plato del día, siempre es una sorpresa agradable.",positivo,2026-02-02
+El Trapiche,Cocina Tradicional,Vía Argentina,4.6,"El servicio es rápido y eficiente, la comida siempre fresca.",positivo,2026-03-11
+Donde José,Alta Cocina,San Francisco,5.0,La carta de vinos es impresionante y bien seleccionada.,positivo,2025-10-19
+Donde José,Alta Cocina,San Francisco,4.7,"El servicio es rápido y eficiente, la comida siempre fresca.",positivo,2025-06-17
+Intimo,Cocina Panameña,San Felipe,4.1,"Algunos platos son mejores que otros, es inconsistente.",neutral,2025-12-31
