@@ -13,7 +13,7 @@ RUTA_DATA = os.path.join(os.path.dirname(__file__), "data")
 RUTA_SENTIMIENTO = os.path.join(RUTA_DATA, "reviews_con_sentimiento.csv")
 RUTA_CLUSTERS = os.path.join(RUTA_DATA, "clusters.csv")
 RUTA_PBI = os.path.join(RUTA_DATA, "powerbi")
-RUTA_PBIX = os.path.join(RUTA_DATA, "RestaurantReviews.pbix")
+RUTA_PBIX = os.path.join(RUTA_PBI, "RestaurantReviews.pbix")
 COMPILADO_CSharp = os.path.join(os.path.dirname(__file__), "tools", "BuildPBIX.exe")
 
 
