@@ -20,9 +20,5 @@ data/reviews_clean.csv
 data/reviews_con_sentimiento.csv
 data/clusters.csv
 
-# Power BI (se genera una vez)
-data/RestaurantReviews.pbix
-data/powerbi/RestaurantesReview.pbix
-
 # Docs (se generan localmente)
 docs/
