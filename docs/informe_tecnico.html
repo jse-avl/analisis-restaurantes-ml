@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Informe Técnico - Plataforma de Análisis de Reseñas de Restaurantes</title>
+<style>
+  @page { margin: 2cm; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    color: #1a1a2e;
+    line-height: 1.6;
+    font-size: 11pt;
+    max-width: 210mm;
+    margin: 0 auto;
+    padding: 20pt;
+  }
+  h1 { font-size: 22pt; color: #1a1a2e; margin-bottom: 6pt; }
+  h2 { font-size: 16pt; color: #16213e; margin-top: 24pt; margin-bottom: 10pt; border-bottom: 2px solid #0f3460; padding-bottom: 4pt; }
+  h3 { font-size: 13pt; color: #0f3460; margin-top: 18pt; margin-bottom: 8pt; }
+  h4 { font-size: 11pt; color: #1a1a2e; margin-top: 12pt; margin-bottom: 6pt; }
+  p { margin-bottom: 8pt; text-align: justify; }
+  ul, ol { margin: 6pt 0 10pt 20pt; }
+  li { margin-bottom: 3pt; }
+  table { width: 100%; border-collapse: collapse; margin: 12pt 0; font-size: 10pt; }
+  th { background: #0f3460; color: white; padding: 6pt 8pt; text-align: left; }
+  td { padding: 5pt 8pt; border: 1px solid #ddd; }
+  tr:nth-child(even) { background: #f5f7fa; }
+  code {
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 9.5pt;
+    background: #f0f0f0;
+    padding: 1pt 4pt;
+    border-radius: 3pt;
+  }
+  pre {
+    background: #1a1a2e;
+    color: #e0e0e0;
+    padding: 10pt;
+    border-radius: 5pt;
+    overflow-x: auto;
+    font-size: 9pt;
+    line-height: 1.4;
+    margin: 10pt 0;
+  }
+  .portada {
+    text-align: center;
+    padding: 60pt 20pt;
+    page-break-after: always;
+  }
+  .portada h1 { font-size: 28pt; margin-bottom: 16pt; }
+  .portada h2 { font-size: 16pt; color: #555; border: none; margin-bottom: 30pt; }
+  .portada .team { font-size: 12pt; color: #777; margin-top: 40pt; }
+  .portada .date { font-size: 11pt; color: #999; margin-top: 10pt; }
+  .toc { page-break-after: always; }
+  .toc ul { list-style: none; padding: 0; }
+  .toc li { margin: 4pt 0; font-size: 11pt; }
+  .toc a { color: #0f3460; text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+  .badge {
+    display: inline-block;
+    background: #0f3460;
+    color: white;
+    padding: 2pt 8pt;
+    border-radius: 10pt;
+    font-size: 9pt;
+    margin: 2pt;
+  }
+  .badge-green { background: #27ae60; }
+  .badge-blue { background: #2980b9; }
+  .badge-orange { background: #e67e22; }
+  .badge-red { background: #e74c3c; }
+  .diagram {
+    font-family: 'Consolas', monospace;
+    background: #f8f9fa;
+    padding: 12pt;
+    border: 1px solid #ddd;
+    border-radius: 5pt;
+    font-size: 9pt;
+    line-height: 1.5;
+    margin: 10pt 0;
+    white-space: pre;
+  }
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8pt;
+    margin: 10pt 0;
+  }
+  .kpi-card {
+    border: 1px solid #ddd;
+    border-radius: 5pt;
+    padding: 8pt 12pt;
+    background: #f8f9fa;
+  }
+  .kpi-card h4 { margin: 0 0 4pt 0; color: #0f3460; }
+  @media print {
+    body { padding: 0; }
+    .portada { padding: 80pt 20pt; }
+    h2 { page-break-after: avoid; }
+    h3 { page-break-after: avoid; }
+    pre { page-break-inside: avoid; }
+    table { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="portada">
+  <h1>Plataforma de Análisis de Reseñas de Restaurantes</h1>
+  <h2>Informe Técnico del Proyecto</h2>
+  <div style="margin-top: 30pt;">
+    <p style="text-align:center;">Machine Learning, Análisis de Sentimiento con LLM,<br>Dashboards Interactivos y Esquema Estrella para Power BI</p>
+  </div>
+  <div class="team">
+    <p><strong>Grupo 5</strong></p>
+    <p>Christian Duraty &bull; Yireikis Abrego &bull; Jorge Izarra &bull; Jose Avila</p>
+  </div>
+  <div class="date">
+    <p>Universidad Tecnológica de Panama</p>
+    <p>Tópicos Especiales &mdash; Parcial 2</p>
+    <p>Julio 2026</p>
+  </div>
+</div>
+
+<div class="toc">
+  <h2>Contenido</h2>
+  <ul>
+    <li><a href="#sec1">1. Introducción y Objetivos</a></li>
+    <li><a href="#sec2">2. Stack Tecnológico Detallado</a></li>
+    <li><a href="#sec3">3. Arquitectura del Pipeline</a></li>
+    <li><a href="#sec4">4. Origen y Tratamiento de los Datos</a></li>
+    <li><a href="#sec5">5. Modelos de Machine Learning</a></li>
+    <li><a href="#sec6">6. Esquema Estrella para Power BI</a></li>
+    <li><a href="#sec7">7. KPIs del Dashboard</a></li>
+    <li><a href="#sec8">8. Integración con LLMs</a></li>
+    <li><a href="#sec9">9. Dashboard Streamlit</a></li>
+    <li><a href="#sec10">10. Guía de Uso</a></li>
+    <li><a href="#sec11">11. Preguntas Frecuentes del Examen</a></li>
+    <li><a href="#sec12">12. Conclusiones</a></li>
+  </ul>
+</div>
+
+<h2 id="sec1">1. Introducción y Objetivos</h2>
+
+<p>Este proyecto implementa una plataforma completa de análisis de reseñas de restaurantes en Panama, integrando técnicas de Machine Learning, procesamiento de lenguaje natural con LLMs, y visualización de datos mediante dashboards interactivos. La plataforma extrae reseñas reales de Google Maps (via Playwright) y Yelp Fusion API, las procesa a través de un pipeline ETL, aplica modelos de clustering y regresión, y presenta los resultados en un dashboard Streamlit y archivos Power BI.</p>
+
+<h3>Objetivos del Proyecto</h3>
+<ol>
+  <li><strong>Recolección de datos:</strong> Obtener más de 1000 reseñas reales de restaurantes panameños desde múltiples fuentes legítimas.</li>
+  <li><strong>Análisis de sentimiento:</strong> Extraer sentimiento por aspecto (comida, servicio, precio) usando LLMs con respaldo keyword-based.</li>
+  <li><strong>Machine Learning:</strong> Implementar clustering no supervisado (KMeans) y regresión supervisada (Random Forest).</li>
+  <li><strong>Visualización:</strong> Desarrollar dashboards interactivos en Streamlit y Power BI con esquema estrella.</li>
+  <li><strong>LLM Integration:</strong> Incorporar consultas en lenguaje natural y resúmenes automáticos via chat.</li>
+</ol>
+
+<h2 id="sec2">2. Stack Tecnológico Detallado</h2>
+
+<h3>2.1 Lenguaje de Programación</h3>
+<table>
+  <tr><th>Tecnología</th><th>Versión</th><th>Propósito</th></tr>
+  <tr><td>Python</td><td>3.13</td><td>Lenguaje principal del proyecto. Elegido por su ecosistema de ML, NLP y scraping.</td></tr>
+</table>
+
+<h3>2.2 Procesamiento de Datos</h3>
+<table>
+  <tr><th>Librería</th><th>Uso en el Proyecto</th></tr>
+  <tr><td><strong>pandas</strong> (1.3+)</td><td>Manipulación de datos en todos los scripts del pipeline: carga de CSVs, agregaciones, transformaciones, groupby para estadísticas por restaurante y cluster.</td></tr>
+  <tr><td><strong>numpy</strong> (1.21+)</td><td>Cálculos numéricos: promedios de ratings, desviaciones, matrices para KMeans, escalado de features.</td></tr>
+  <tr><td><strong>python-dotenv</strong> (0.19+)</td><td>Carga de variables de entorno (.env) para API keys de LLM y Yelp.</td></tr>
+</table>
+
+<h3>2.3 Scraping y Recolección</h3>
+<table>
+  <tr><th>Librería</th><th>Uso en el Proyecto</th></tr>
+  <tr><td><strong>playwright</strong> (1.40+)</td><td>Scraping principal de Google Maps. Navega por páginas de restaurantes, hace scroll en pestaña de opiniones, extrae texto, rating, fecha y reseñador de cada reseña. Opera en modo headless Chromium.</td></tr>
+  <tr><td><strong>selenium</strong> (4.15+)</td><td>Fallback del scraping. Usa ChromeDriver Manager para cuando Playwright no está disponible.</td></tr>
+  <tr><td><strong>webdriver-manager</strong> (4.0+)</td><td>Gestión automática de ChromeDriver para Selenium.</td></tr>
+  <tr><td><strong>requests</strong> (2.28+)</td><td>Llamadas a la API REST de Yelp Fusion para obtener reseñas adicionales legales.</td></tr>
+</table>
+
+<h3>2.4 Machine Learning</h3>
+<table>
+  <tr><th>Librería</th><th>Uso en el Proyecto</th></tr>
+  <tr><td><strong>scikit-learn</strong> (1.0+)</td><td>Framework principal de ML. Se usa: KMeans para clustering, RandomForestRegressor para regresión, StandardScaler para normalización, LabelEncoder para codificación de categorías, train_test_split, y métricas (MAE, RMSE, R²).</td></tr>
+  <tr><td><strong>scipy</strong></td><td>Dependencia de scikit-learn para operaciones científicas subyacentes.</td></tr>
+</table>
+
+<h3>2.5 Visualización y Dashboard</h3>
+<table>
+  <tr><th>Librería</th><th>Uso en el Proyecto</th></tr>
+  <tr><td><strong>streamlit</strong> (1.10+)</td><td>Framework de dashboard interactivo con 5 pestañas temáticas, filtros dinámicos, gráficos Matplotlib integrados, y sistema de chat LLM.</td></tr>
+  <tr><td><strong>matplotlib</strong> (3.4+)</td><td>Generación de gráficos: barras de distribución, histogramas, dispersión de clusters, barras horizontales de importancia, gráficos de pastel para sentimiento.</td></tr>
+</table>
+
+<h3>2.6 Modelos de Lenguaje (LLM)</h3>
+<table>
+  <tr><th>Librería</th><th>Uso en el Proyecto</th></tr>
+  <tr><td><strong>anthropic</strong> (0.40+)</td><td>Cliente para Claude 3 Haiku. Se usa para análisis de sentimiento por aspecto y chat interactivo.</td></tr>
+  <tr><td><strong>openai</strong> (1.0+)</td><td>Cliente para GPT-4o-mini. Alternativa para análisis de sentimiento cuando no hay key de Anthropic.</td></tr>
+  <tr><td><strong>google-generativeai</strong> (0.8+)</td><td>Cliente para Gemini 1.5 Flash. Alternativa gratuita para chat y resúmenes.</td></tr>
+  <tr><td><strong>groq</strong> (0.9+)</td><td>Cliente para Groq API (Llama 3 70B). Alternativa gratuita y rápida para inferencia.</td></tr>
+</table>
+
+<h2 id="sec3">3. Arquitectura del Pipeline</h2>
+
+<p>El pipeline ETL está orquestado por <code>run_pipeline.py</code> que ejecuta 6 pasos secuenciales:</p>
+
+<div class="diagram">
+Google Maps (Playwright) ----+
+                             +---> descargar_datos.py -> limpiar_datos.py
+Yelp Fusion API -------------+
+                                         |
+                                  analizar_sentimiento.py
+                                    (LLM + keyword backup)
+                                         |
+                                  clustering.py (KMeans)
+                                         |
+                                  regresion.py (RandomForest)
+                                         |
+                                  exportar_powerbi.py (Estrella)
+                                         |
+                              +----------+----------+
+                              |                     |
+                       Streamlit app.py      Power BI (.pbix)
+                       (+ chat LLM)          (+ KPIs visuales)
+</div>
+
+<h3>3.1 Paso 1: Descarga de Datos (<code>descargar_datos.py</code>)</h3>
+<p>Orquesta la obtención de datos desde múltiples fuentes en orden de prioridad:</p>
+<ol>
+  <li><strong>Playwright:</strong> Ejecuta scraper en Google Maps para 20 restaurantes de Panama (~120 reseñas c/u).</li>
+  <li><strong>Selenium:</strong> Fallback automático si Playwright falla. Obtiene nombres reales + reseñas generadas.</li>
+  <li><strong>Yelp Fusion API:</strong> Obtiene reseñas legales vía API oficial (gratuita, 500 llamadas/día).</li>
+  <li><strong>Dataset de respaldo:</strong> CSV precargado con reseñas en español.</li>
+</ol>
+<p>La salida es <code>data/reviews.csv</code> con columnas: restaurante, categoria, barrio, rating, reseña, sentimiento, fecha.</p>
+
+<h3>3.2 Paso 2: Limpieza (<code>limpiar_datos.py</code>)</h3>
+<p>Transformaciones aplicadas:</p>
+<ul>
+  <li>Limpieza de texto: eliminación de caracteres especiales, normalización de espacios.</li>
+  <li>Filtrado: reseñas sin texto válido (menos de 5 caracteres) o sin rating son descartadas.</li>
+  <li>Deduplicación: basada en (restaurante + primeros 50 caracteres de reseña).</li>
+  <li>Clasificación por rating: bueno (&gt;3.5), neutral (2.0-3.5), malo (&lt;=2.0).</li>
+  <li>Salida: <code>data/reviews_clean.csv</code> con reseña_limpia, longitud_reseña, categoria_rating.</li>
+</ul>
+
+<h3>3.3 Paso 3: Análisis de Sentimiento (<code>analizar_sentimiento.py</code>)</h3>
+<p>Extrae sentimiento para 3 aspectos (comida, servicio, precio) usando dos modalidades:</p>
+<ul>
+  <li><strong>LLM (recomendado):</strong> Usa Claude 3 Haiku o GPT-4o-mini para extraer sentimiento con alta precisión semántica. Límite de 50 llamadas por ejecución para control de costos. El prompt pide JSON estructurado con sentimiento_general y sentimiento por aspecto más palabras clave.</li>
+  <li><strong>Keyword (fallback):</strong> Léxico con 50+ términos por aspecto en español. Cuenta ocurrencias de palabras positivas/negativas para determinar sentimiento. Siempre se usa para reseñas más allá del límite LLM.</li>
+</ul>
+<p>Salida: <code>data/reviews_con_sentimiento.csv</code> con columnas de sentimiento para cada aspecto y palabras clave extraídas.</p>
+
+<h3>3.4 Paso 4: Clustering (<code>clustering.py</code>)</h3>
+<p>Agrupa restaurantes por desempeño usando KMeans. Features normalizadas con StandardScaler: rating_promedio (peso 0.4), num_resenas (popularidad, peso 0.2), pct_positivo (peso 0.6). Los clusters se etiquetan ordenando centroides por calidad: Excelente, Bueno, Regular, Malo.</p>
+
+<h3>3.5 Paso 5: Regresión (<code>regresion.py</code>)</h3>
+<p>Random Forest Regressor para predecir rating numérico. Features: longitud del texto, sentimiento general, sentimiento por aspecto (comida/servicio/precio), restaurante (codificado). Train/test 80/20. Evalúa con MAE, RMSE, R². Guarda importancia de features y tabla de predicciones.</p>
+
+<h3>3.6 Paso 6: Exportación Power BI (<code>exportar_powerbi.py</code>)</h3>
+<p>Genera 5 CSVs en esquema estrella (FactResenas, DimRestaurante, DimFecha, DimSentimiento, DimRating) y llama al compilado <code>tools/BuildPBIX.exe</code> (C# con librerías TOM de Power BI Desktop) para crear <code>data/RestaurantReviews.pbix</code> con el modelo tabular completo: tablas, columnas, relaciones y 14 medidas DAX.</p>
+<p><strong>Nota:</strong> El .pbix solo se genera la primera vez. En ejecuciones posteriores, se conserva para mantener los visuales del dashboard. Solo se actualizan los CSVs; el usuario abre Power BI y hace clic en "Actualizar".</p>
+
+<h2 id="sec4">4. Origen y Tratamiento de los Datos</h2>
+
+<h3>4.1 Google Maps (Playwright)</h3>
+<p>El scraper <code>scraper_playwright.py</code> automatiza un navegador Chromium headless para:</p>
+<ol>
+  <li>Buscar "restaurantes en Panama" en Google Maps.</li>
+  <li>Extraer URLs de restaurantes del feed de resultados (scroll para carga completa).</li>
+  <li>Navegar a cada restaurante y hacer clic en la pestaña "Opiniones".</li>
+  <li>Hacer scroll para cargar reseñas mediante lazy-loading (hasta 120 reseñas por restaurante).</li>
+  <li>Extraer para cada reseña: texto, rating (estrellas), reseñador y fecha.</li>
+</ol>
+<p>Configuración: locale es-PA, user-agent de escritorio, viewport 1920x1080.</p>
+
+<h3>4.2 Yelp Fusion API</h3>
+<p><code>scraper_yelp.py</code> consume la API oficial de Yelp (gratuita con registro en developers.yelp.com):</p>
+<ol>
+  <li><code>GET /businesses/search</code>: busca restaurantes en Panama con paginación (hasta 50 negocios).</li>
+  <li><code>GET /businesses/{id}/reviews</code>: obtiene hasta 3 reseñas por negocio.</li>
+  <li>Combina con datos de Google Maps para un dataset más completo.</li>
+</ol>
+
+<h3>4.3 Dataset Actual</h3>
+<p>El dataset final contiene reseñas reales y auténticas de restaurantes panameños. No se utilizan reseñas generadas sintéticamente. Las reseñas pasan por un proceso de limpieza y deduplicación antes del análisis.</p>
+
+<h2 id="sec5">5. Modelos de Machine Learning</h2>
+
+<h3>5.1 KMeans Clustering (No Supervisado)</h3>
+
+<h4>Descripción</h4>
+<p>KMeans agrupa restaurantes en 4 clusters basados en 3 características numéricas normalizadas con StandardScaler: rating promedio, porcentaje de reseñas positivas, y número de reseñas (popularidad). Los clusters se etiquetan automáticamente según la calidad del centroide.</p>
+
+<h4>Hiperparámetros</h4>
+<table>
+  <tr><th>Parámetro</th><th>Valor</th><th>Justificación</th></tr>
+  <tr><td>n_clusters</td><td>4</td><td>Número manejable de categorías de desempeño. Suficiente para diferenciar sin sobre-segmentar con solo 5-20 restaurantes.</td></tr>
+  <tr><td>random_state</td><td>42</td><td>Reproducibilidad de resultados.</td></tr>
+  <tr><td>n_init</td><td>10</td><td>Evita óptimos locales con múltiples inicializaciones.</td></tr>
+</table>
+
+<h4>Justificación de la Elección</h4>
+<p>KMeans fue seleccionado porque:</p>
+<ol>
+  <li><strong>Interpretabilidad:</strong> Los clusters resultantes tienen significado directo (Excelente, Bueno, Regular, Malo), facilitando la comunicación con stakeholders.</li>
+  <li><strong>Escalabilidad:</strong> Computacionalmente eficiente para el volumen actual de datos (~5-20 puntos).</li>
+  <li><strong>Simplicidad:</strong> Pocos hiperparámetros que ajustar, resultado determinista con random_state fijo.</li>
+  <li><strong>Alternativas descartadas:</strong> DBSCAN requiere densidad variable que no tenemos con pocos restaurantes; Clustering Jerárquico es overkill para este volumen y menos intuitivo para etiquetar.</li>
+</ol>
+
+<h3>5.2 Random Forest Regressor (Supervisado)</h3>
+
+<h4>Descripción</h4>
+<p>Random Forest Regressor predice el rating numérico (1-5) de una reseña individual basado en 6 features: longitud del texto, sentimiento general (0/1/2), sentimiento por aspecto (comida, servicio, precio), y restaurante (codificado con LabelEncoder).</p>
+
+<h4>Hiperparámetros</h4>
+<table>
+  <tr><th>Parámetro</th><th>Valor</th><th>Justificación</th></tr>
+  <tr><td>n_estimators</td><td>100</td><td>Balance entre precisión y tiempo de entrenamiento. Suficiente para estabilizar el error out-of-bag.</td></tr>
+  <tr><td>random_state</td><td>42</td><td>Reproducibilidad.</td></tr>
+  <tr><td>n_jobs</td><td>-1</td><td>Usa todos los núcleos CPU para entrenamiento paralelo.</td></tr>
+  <tr><td>train/test</td><td>80/20</td><td>Split estándar para datasets pequeños.</td></tr>
+</table>
+
+<h4>Métricas Obtenidas</h4>
+<table>
+  <tr><th>Métrica</th><th>Valor</th><th>Interpretación</th></tr>
+  <tr><td>MAE</td><td>0.52</td><td>El error promedio es de ~0.5 estrellas, aceptable para predicción de ratings.</td></tr>
+  <tr><td>RMSE</td><td>0.83</td><td>Penaliza errores grandes; el RMSE &lt; 1 indica que la mayoría de predicciones están dentro de 1 estrella.</td></tr>
+  <tr><td>R²</td><td>0.26</td><td>El modelo explica el 26% de la varianza. Moderado, esperado dado que features textuales simples tienen capacidad predictiva limitada.</td></tr>
+</table>
+
+<h4>Importancia de Features</h4>
+<table>
+  <tr><th>Feature</th><th>Importancia</th><th>Interpretación</th></tr>
+  <tr><td>longitud</td><td>0.58</td><td>La longitud del texto es el predictor más fuerte: reseñas largas tienden a tener ratings más extremos.</td></tr>
+  <tr><td>sentimiento_num</td><td>0.16</td><td>El sentimiento general captura la polaridad de la reseña.</td></tr>
+  <tr><td>restaurante_id</td><td>0.14</td><td>El restaurante específico influye: algunos tienen ratings consistentemente más altos.</td></tr>
+  <tr><td>sentimiento_comida_num</td><td>0.04</td><td>El sentimiento sobre comida tiene impacto moderado.</td></tr>
+  <tr><td>sentimiento_servicio_num</td><td>0.04</td><td>Similar al de comida.</td></tr>
+  <tr><td>sentimiento_precio_num</td><td>0.04</td><td>El precio es el aspecto menos predictivo del rating.</td></tr>
+</table>
+
+<h4>Justificación de la Elección</h4>
+<p>Random Forest Regressor fue seleccionado porque:</p>
+<ol>
+  <li><strong>Features mixtos:</strong> Maneja naturalmente variables numéricas (longitud) y categóricas (restaurante codificado, sentimientos ordinales).</li>
+  <li><strong>Robustez a outliers:</strong> Las reseñas muy positivas o negativas no sesgan el modelo gracias al promediado de árboles.</li>
+  <li><strong>No requiere escalado:</strong> A diferencia de SVM o regresión lineal, Random Forest es invariante a la escala de features.</li>
+  <li><strong>Feature importance:</strong> Provee interpretabilidad directa de qué factores influyen más en el rating.</li>
+  <li><strong>Alternativas descartadas:</strong> Regresión Lineal asume linealidad que no tenemos. SVM es más costoso y menos interpretable. Gradient Boosting sobreajusta con datos pequeños.</li>
+</ol>
+
+<h2 id="sec6">6. Esquema Estrella para Power BI</h2>
+
+<p>El archivo <code>exportar_powerbi.py</code> genera 5 archivos CSV que forman un esquema estrella listo para Power BI Desktop:</p>
+
+<div class="diagram">
+DimRestaurante ----+
+                   |
+DimFecha ----------+--- FactResenas ---- DimRating
+                   |
+DimSentimiento ----+
+</div>
+
+<h3>6.1 Tabla de Hechos: FactResenas</h3>
+<table>
+  <tr><th>Columna</th><th>Tipo</th><th>Descripción</th></tr>
+  <tr><td>id_resena</td><td>INT (PK)</td><td>Identificador único de reseña</td></tr>
+  <tr><td>id_restaurante</td><td>INT (FK)</td><td>Referencia a DimRestaurante</td></tr>
+  <tr><td>id_fecha</td><td>INT (FK)</td><td>Referencia a DimFecha (formato YYYYMMDD)</td></tr>
+  <tr><td>id_sentimiento</td><td>INT (FK)</td><td>Referencia a DimSentimiento</td></tr>
+  <tr><td>id_rating</td><td>INT (FK)</td><td>Referencia a DimRating</td></tr>
+  <tr><td>rating</td><td>DECIMAL</td><td>Rating numérico (1-5) - medida</td></tr>
+  <tr><td>longitud_reseña</td><td>INT</td><td>Longitud del texto - medida</td></tr>
+</table>
+
+<h3>6.2 Dimensiones</h3>
+<p><strong>DimRestaurante:</strong> id_restaurante (PK), nombre, categoria, barrio, cluster, rating_promedio, num_resenas, pct_positivo, pct_neutral, pct_negativo</p>
+<p><strong>DimFecha:</strong> id_fecha (PK), fecha_completa, año, mes, nombre_mes, día, dia_semana, nombre_dia, trimestre</p>
+<p><strong>DimSentimiento:</strong> id_sentimiento (PK), sentimiento_general, sentimiento_comida, sentimiento_servicio, sentimiento_precio</p>
+<p><strong>DimRating:</strong> id_rating (PK), rating_numerico, categoria_rating (bueno/neutral/malo)</p>
+
+<h3>6.3 Generación del .pbix</h3>
+<p>El pipeline ejecuta <code>exportar_powerbi.py</code> que genera los 5 CSVs del esquema estrella, y además un script C# (compilado contra las librerías TOM de Power BI Desktop) crea el archivo <code>data/RestaurantReviews.pbix</code> con el modelo tabular completo serializado en JSON (DataModelSchema). Este .pbix incluye las 5 tablas con sus columnas, las 4 relaciones entre fact y dimensiones, y 14 medidas DAX predefinidas.</p>
+
+<h3>6.4 Uso en Power BI</h3>
+<ol>
+  <li>Abrir <code>data/RestaurantReviews.pbix</code> en Power BI Desktop.</li>
+  <li>Configurar fuentes de datos CSV apuntando a <code>data/powerbi/*.csv</code> (Modelado → Administrar conexiones de datos).</li>
+  <li>Las relaciones y medidas DAX ya están incluidas, solo falta crear los visuales en las 4 páginas del dashboard.</li>
+</ol>
+
+<h2 id="sec7">7. Dashboard Power BI — Visuales, Measures y Configuración</h2>
+
+<p>El dashboard Power BI está organizado en 4 páginas, cada una con un enfoque diferente del análisis. A continuación se describe cada visual, los campos que utiliza, las medidas DAX que lo alimentan, y qué representa.</p>
+
+<h3>7.1 Measures DAX Base</h3>
+<p>Antes de crear los visuales, se definen las siguientes medidas DAX en Power BI (Modeling → New Measure):</p>
+
+<table>
+  <tr><th>Medida</th><th>Expresión DAX</th><th>Qué calcula</th></tr>
+  <tr><td>Total Reseñas</td><td><code>COUNTROWS(FactResenas)</code></td><td>Conteo total de reseñas en la tabla de hechos. Es la base para todos los cálculos de porcentaje.</td></tr>
+  <tr><td>Rating Promedio</td><td><code>AVERAGE(FactResenas[rating])</code></td><td>Promedio aritmético del rating numérico (1-5) de todas las reseñas. Representa la calidad general percibida.</td></tr>
+  <tr><td>Total Restaurantes</td><td><code>DISTINCTCOUNT(FactResenas[id_restaurante])</code></td><td>Número único de restaurantes diferentes en el dataset. Evita contar duplicados.</td></tr>
+  <tr><td>% Positivo</td><td><code>DIVIDE(CALCULATE(COUNTROWS(FactResenas), DimSentimiento[sentimiento_general] = "positivo"), [Total Reseñas])</code></td><td>Porcentaje de reseñas con sentimiento general positivo. Usa DIVIDE para evitar división por cero.</td></tr>
+  <tr><td>% Positivo Comida</td><td><code>DIVIDE(CALCULATE(COUNTROWS(FactResenas), DimSentimiento[sentimiento_comida] = "positivo"), [Total Reseñas])</code></td><td>Porcentaje de reseñas donde el sentimiento sobre comida es positivo.</td></tr>
+  <tr><td>% Positivo Servicio</td><td><code>DIVIDE(CALCULATE(COUNTROWS(FactResenas), DimSentimiento[sentimiento_servicio] = "positivo"), [Total Reseñas])</code></td><td>Porcentaje de reseñas donde el sentimiento sobre servicio es positivo.</td></tr>
+  <tr><td>% Positivo Precio</td><td><code>DIVIDE(CALCULATE(COUNTROWS(FactResenas), DimSentimiento[sentimiento_precio] = "positivo"), [Total Reseñas])</code></td><td>Porcentaje de reseñas donde el sentimiento sobre precio es positivo.</td></tr>
+  <tr><td>Scoring Compuesto</td><td><code>[Rating Promedio] * 0.5 + [% Positivo] * 0.3 + DIVIDE(COUNTROWS(FactResenas), MAX(FactResenas[id_resena])) * 0.2 * 5</code></td><td>Índice compuesto de 0 a 5. Combina calidad (50%), sentimiento (30%) y actividad reciente (20%).</td></tr>
+</table>
+
+<h3>7.2 Página 1 — Resumen Ejecutivo</h3>
+<p>Proporciona una visión general rápida del estado del negocio. Diseñada para ejecutivos y gerentes que necesitan ver los números clave en segundos.</p>
+
+<table>
+  <tr><th>Visual</th><th>Tipo</th><th>Campos / Measures</th><th>Qué representa</th></tr>
+  <tr>
+    <td>Total Reseñas</td>
+    <td>Card (123)</td>
+    <td>Measure: <code>Total Reseñas</code></td>
+    <td>Muestra un solo número grande con el total de reseñas analizadas (~1,264). Indica el volumen de datos disponibles para el análisis.</td>
+  </tr>
+  <tr>
+    <td>Rating Promedio</td>
+    <td>Card (123)</td>
+    <td>Measure: <code>Rating Promedio</code></td>
+    <td>Muestra el promedio de estrellas de todas las reseñas (~4.6 de 5). Indica la calidad percibida general de los restaurantes.</td>
+  </tr>
+  <tr>
+    <td>Total Restaurantes</td>
+    <td>Card (123)</td>
+    <td>Measure: <code>Total Restaurantes</code></td>
+    <td>Muestra cuántos restaurantes diferentes hay en el dataset (10). Indica la cobertura del análisis.</td>
+  </tr>
+  <tr>
+    <td>Distribución de Sentimiento</td>
+    <td>Donut chart</td>
+    <td>Legend: <code>DimSentimiento[sentimiento_general]</code><br>Values: <code>Total Reseñas</code></td>
+    <td>Muestra la proporción de reseñas positivas, negativas y neutrales como un anillo. Los colores representan cada categoría de sentimiento. Permite ver rápidamente si predomina el sentimiento positivo o negativo.</td>
+  </tr>
+  <tr>
+    <td>Top Restaurantes por Rating</td>
+    <td>Clustered bar chart</td>
+    <td>Y-axis: <code>DimRestaurante[restaurante]</code><br>Values: <code>Rating Promedio</code></td>
+    <td>Barras horizontales que muestran los 10 restaurantes ordenados por rating promedio de mayor a menor. Permite comparar rápidamente cuáles son los mejor calificados.</td>
+  </tr>
+</table>
+
+<h3>7.3 Página 2 — Análisis por Restaurante</h3>
+<p>Análisis detallado de un restaurante específico seleccionado por el usuario. Permite evaluar fortalezas y debilidades por aspecto.</p>
+
+<table>
+  <tr><th>Visual</th><th>Tipo</th><th>Campos / Measures</th><th>Qué representa</th></tr>
+  <tr>
+    <td>Filtro Restaurante</td>
+    <td>Slicer (Dropdown)</td>
+    <td>Field: <code>DimRestaurante[restaurante]</code></td>
+    <td>Menú desplegable que filtra todos los visuales de la página por el restaurante seleccionado. Al cambiar la selección, todos los gráficos se actualizan automáticamente.</td>
+  </tr>
+  <tr>
+    <td>% Positivo Comida</td>
+    <td>Card (123)</td>
+    <td>Measure: <code>% Positivo Comida</code></td>
+    <td>Muestra el porcentaje de reseñas del restaurante seleccionado donde la comida tiene sentimiento positivo. Indica la calidad percibida de la comida.</td>
+  </tr>
+  <tr>
+    <td>% Positivo Servicio</td>
+    <td>Card (123)</td>
+    <td>Measure: <code>% Positivo Servicio</code></td>
+    <td>Muestra el porcentaje de reseñas donde el servicio tiene sentimiento positivo. Indica la calidad del trato al cliente.</td>
+  </tr>
+  <tr>
+    <td>% Positivo Precio</td>
+    <td>Card (123)</td>
+    <td>Measure: <code>% Positivo Precio</code></td>
+    <td>Muestra el porcentaje de reseñas donde el precio tiene sentimiento positivo. Indica la percepción de valor por dinero.</td>
+  </tr>
+  <tr>
+    <td>Comparación de Aspectos</td>
+    <td>Clustered bar chart</td>
+    <td>Y-axis: <code>DimSentimiento[sentimiento_comida]</code><br>Values: <code>Total Reseñas</code></td>
+    <td>Barras que muestran la distribución de sentimiento (positivo/negativo/neutral) para el aspecto seleccionado. Permite ver rápidamente si hay más quejas o elogios.</td>
+  </tr>
+  <tr>
+    <td>Últimas Reseñas</td>
+    <td>Table</td>
+    <td><code>DimRestaurante[restaurante]</code>, <code>FactResenas[rating]</code>, <code>DimSentimiento[sentimiento_general]</code></td>
+    <td>Tabla con las reseñas más recientes del restaurante, mostrando el rating y el sentimiento general. Permite ver ejemplos reales de lo que dicen los clientes.</td>
+  </tr>
+</table>
+
+<h3>7.4 Página 3 — Clusters</h3>
+<p>Visualiza la segmentación de restaurantes realizada por el algoritmo KMeans. Muestra cómo se agrupan según su desempeño.</p>
+
+<table>
+  <tr><th>Visual</th><th>Tipo</th><th>Campos / Measures</th><th>Qué representa</th></tr>
+  <tr>
+    <td>Clusters de Restaurantes</td>
+    <td>Scatter chart</td>
+    <td>X-axis: <code>DimRestaurante[rating_promedio]</code><br>Y-axis: <code>DimRestaurante[pct_positivo]</code><br>Size: <code>DimRestaurante[num_resenas]</code><br>Legend: <code>DimRestaurante[cluster]</code></td>
+    <td>Cada punto representa un restaurante. La posición horizontal indica el rating promedio (mejor a la derecha). La posición vertical indica el porcentaje de sentimiento positivo (mejor arriba). El tamaño del punto indica la cantidad de reseñas (más grande = más popular). Los colores representan el cluster: <strong>Excelente</strong> (alto rating, alto % positivo), <strong>Bueno</strong>, <strong>Regular</strong>, <strong>Malo</strong> (bajo rating, bajo % positivo).</td>
+  </tr>
+  <tr>
+    <td>Restaurantes por Cluster</td>
+    <td>Table</td>
+    <td><code>DimRestaurante[cluster]</code>, <code>DimRestaurante[restaurante]</code>, <code>DimRestaurante[rating_promedio]</code>, <code>DimRestaurante[pct_positivo]</code>, <code>DimRestaurante[num_resenas]</code></td>
+    <td>Tabla completa que lista cada restaurante con su cluster asignado, rating promedio, porcentaje positivo y número de reseñas. Permite ver exactamente en qué cluster cayó cada restaurante y sus métricas.</td>
+  </tr>
+</table>
+
+<h3>7.5 Página 4 — KPIs Detallados</h3>
+<p>Análisis profundo con tendencias temporales, métricas compuestas y heatmaps de satisfacción.</p>
+
+<table>
+  <tr><th>Visual</th><th>Tipo</th><th>Campos / Measures</th><th>Qué representa</th></tr>
+  <tr>
+    <td>Evolución del Sentimiento Positivo</td>
+    <td>Line chart</td>
+    <td>X-axis: <code>DimFecha[año]</code> + <code>DimFecha[mes]</code> (jerarquía)<br>Values: <code>% Positivo</code></td>
+    <td>Línea temporal que muestra cómo ha cambiado el porcentaje de sentimiento positivo a lo largo de los meses. El eje X muestra una jerarquía año → mes. Una línea descendente indica que el sentimiento positivo está disminuyendo; ascendente indica mejora.</td>
+  </tr>
+  <tr>
+    <td>Satisfacción por Aspecto y Restaurante</td>
+    <td>100% stacked bar chart</td>
+    <td>Y-axis: <code>DimRestaurante[restaurante]</code><br>Values: <code>% Positivo Comida</code>, <code>% Positivo Servicio</code>, <code>% Positivo Precio</code></td>
+    <td>Barras apiladas al 100% que muestran la proporción de sentimiento positivo por cada aspecto (comida, servicio, precio) para cada restaurante. Los colores diferencian los aspectos. Permite comparar visualmente en qué aspecto cada restaurante es mejor o peor.</td>
+  </tr>
+  <tr>
+    <td>Scoring Compuesto General</td>
+    <td>Gauge (velocímetro)</td>
+    <td>Value: <code>Scoring Compuesto</code><br>Min: 0, Max: 5, Target: 5</td>
+    <td>Medidor tipo velocímetro que muestra un índice compuesto de 0 a 5. Combina tres factores: Rating Promedio (50% de peso), % Positivo (30% de peso), y actividad reciente (20% de peso). La aguja verde indica buen desempeño, amarilla regular, roja malo. El objetivo es llegar a 5.</td>
+  </tr>
+  <tr>
+    <td>Heatmap de Satisfacción</td>
+    <td>Matrix</td>
+    <td>Rows: <code>DimRestaurante[restaurante]</code><br>Values: <code>% Positivo Comida</code>, <code>% Positivo Servicio</code>, <code>% Positivo Precio</code></td>
+    <td>Matriz cruzada donde las filas son restaurantes y las columnas son los 3 aspectos. Cada celda muestra el porcentaje de sentimiento positivo con formato condicional: verde intenso = alto (cercano a 100%), blanco = medio, rojo = bajo (cercano a 0%). Permite identificar rápidamente los puntos débiles de cada restaurante.</td>
+  </tr>
+</table>
+
+<h3>7.6 Cómo Funcionan las Medidas DAX</h3>
+
+<h4>DIVIDE vs División Directa</h4>
+<p>Todas las medidas de porcentaje usan <code>DIVIDE()</code> en lugar de <code>/</code>. Esto es porque <code>DIVIDE()</code> retorna 0 cuando el denominador es 0 (evita errores #DIV/0!), mientras que <code>/</code> generaría un error que rompería el visual.</p>
+
+<h4>CALCULATE y Filtros</h4>
+<p>Las medidas como <code>% Positivo Comida</code> usan <code>CALCULATE()</code> para modificar el contexto de filtro. Por ejemplo:</p>
+<pre>
+% Positivo Comida = DIVIDE(
+    CALCULATE(COUNTROWS(FactResenas), DimSentimiento[sentimiento_comida] = "positivo"),
+    [Total Reseñas]
+)
+</pre>
+<p><code>CALCULATE</code> cuenta solo las reseñas donde <code>sentimiento_comida = "positivo"</code>, ignorando el resto. Luego se divide entre el total para obtener el porcentaje.</p>
+
+<h4>Scoring Compuesto — Desglose</h4>
+<pre>
+Scoring Compuesto =
+    [Rating Promedio] * 0.5                    -- Calidad (50% del peso)
+    + [% Positivo] * 0.3                       -- Sentimiento (30% del peso)
+    + DIVIDE(COUNTROWS(FactResenas),           -- Actividad reciente (20%)
+             MAX(FactResenas[id_resena])) * 0.2 * 5
+</pre>
+<p>El tercer término mide la proporción de reseñas recientes vs el ID más alto, escalar a 0-5. Esto recompensa restaurantes con actividad reciente.</p>
+
+<h3>7.7 Relaciones del Modelo</h3>
+<p>Las tablas del esquema estrella se relacionan de la siguiente manera:</p>
+<table>
+  <tr><th>Relación</th><th>Columna (Uno)</th><th>Columna (Muchos)</th><th>Cardinalidad</th></tr>
+  <tr><td>FactResenas → DimRestaurante</td><td>DimRestaurante[id_restaurante]</td><td>FactResenas[id_restaurante]</td><td>1:N</td></tr>
+  <tr><td>FactResenas → DimFecha</td><td>DimFecha[id_fecha]</td><td>FactResenas[id_fecha]</td><td>1:N</td></tr>
+  <tr><td>FactResenas → DimSentimiento</td><td>DimSentimiento[id_sentimiento]</td><td>FactResenas[id_sentimiento]</td><td>1:N</td></tr>
+  <tr><td>FactResenas → DimRating</td><td>DimRating[id_rating]</td><td>FactResenas[id_rating]</td><td>1:N</td></tr>
+</table>
+<p>Estas relaciones permiten que al filtrar por restaurante (DimRestaurante), todas las medidas calculadas sobre FactResenas se actualicen automáticamente para mostrar solo datos de ese restaurante.</p>
+
+<h3>7.8 Actualización de Datos</h3>
+<p>El pipeline está diseñado para ejecutarse múltiples veces sin destruir el trabajo visual:</p>
+<ol>
+  <li>La <strong>primera vez</strong>: se ejecuta <code>exportar_powerbi.py</code> que genera los CSVs y el archivo .pbix con el modelo tabular.</li>
+  <li>Se abre el .pbix en Power BI Desktop y se crean todos los visuales (4 páginas).</li>
+  <li>En ejecuciones posteriores del pipeline: solo se actualizan los CSVs en <code>data/powerbi/</code>.</li>
+  <li>En Power BI Desktop: se hace clic en <strong>Refresh</strong> (flecha circular en la cinta Home).</li>
+  <li>Los datos se recargan y <strong>todos los visuales se conservan intactos</strong> — no es necesario recrear nada.</li>
+</ol>
+
+<h2 id="sec8">8. Integración con LLMs</h2>
+
+<h3>8.1 Arquitectura del Adaptador Universal</h3>
+<p><code>llm_utils.py</code> implementa un patrón Adapter que abstrae 4 proveedores de LLM bajo una interfaz común:</p>
+
+<table>
+  <tr><th>Proveedor</th><th>Modelo</th><th>Costo</th><th>API Key</th></tr>
+  <tr><td>Anthropic</td><td>Claude 3 Haiku</td><td>Pago</td><td>ANTHROPIC_API_KEY</td></tr>
+  <tr><td>OpenAI</td><td>GPT-4o-mini</td><td>Pago</td><td>OPENAI_API_KEY</td></tr>
+  <tr><td>Google Gemini</td><td>Gemini 1.5 Flash</td><td>Gratuito (cuota)</td><td>GEMINI_API_KEY</td></tr>
+  <tr><td>Groq</td><td>Llama 3 70B</td><td>Gratuito</td><td>GROQ_API_KEY</td></tr>
+</table>
+
+<p>La función <code>get_available_provider()</code> detecta automáticamente qué API key está configurada y usa el proveedor correspondiente en orden de prioridad: Anthropic → OpenAI → Gemini → Groq.</p>
+
+<h3>8.2 Chat Asistente</h3>
+<p>En la pestaña "Asistente LLM" del dashboard Streamlit, los usuarios pueden hacer preguntas en lenguaje natural como:</p>
+<ul>
+  <li>"¿Qué restaurante tiene mejor servicio?"</li>
+  <li>"Resume las reseñas negativas del último mes"</li>
+  <li>"¿Cuál es la tendencia de sentimiento para Expreso Santeño?"</li>
+</ul>
+<p>El LLM recibe un contexto estructurado (estadísticas agregadas de los DataFrames) y responde exclusivamente basado en datos reales. El chat mantiene historial en session_state para conversaciones continuas.</p>
+
+<h3>8.3 Resúmenes Automáticos</h3>
+<p>Al seleccionar un restaurante, el LLM genera un resumen ejecutivo de 3 párrafos destacando fortalezas, áreas de mejora y tendencias. Los resúmenes se cachean por restaurante y se regeneran solo cuando hay nuevas reseñas (detectado por cambio en el conteo de reseñas).</p>
+
+<h3>8.4 Rate Limiting y Caché</h3>
+<p>El sistema implementa rate limiting (1 llamada/segundo por proveedor) y caché LRU de 200 entradas basado en hash del prompt, evitando llamadas redundantes y controlando costos de API.</p>
+
+<h2 id="sec9">9. Dashboard Streamlit</h2>
+
+<p>La aplicación <code>app.py</code> carga los datos cacheados y presenta 5 pestañas interactivas:</p>
+
+<h3>9.1 Resumen General</h3>
+<p>Métricas globales (restaurantes, reseñas totales, rating promedio, % positivo), distribución de ratings por categoría, distribución de sentimiento por aspecto (3 gráficos de pastel para comida/servicio/precio), y tabla de restaurantes con filtros por nombre y rango de rating.</p>
+
+<h3>9.2 Análisis por Restaurante</h3>
+<p>Al seleccionar un restaurante: rating promedio, número de reseñas, % positivo, histograma de ratings, distribución de sentimiento, desglose por aspecto (comida/servicio/precio) con indicadores de color, palabras clave más frecuentes por aspecto en gráficos de barras horizontales, y últimas 10 reseñas con emoticonos de sentimiento.</p>
+
+<h3>9.3 Clustering y Regresión</h3>
+<p>Gráfico de dispersión de clusters (rating vs % positivo, tamaño = popularidad), tabla de restaurantes por cluster, estadísticas agregadas por cluster, métricas del modelo Random Forest (MAE, RMSE, R²), importancia de features, y tabla de rating real vs predicho.</p>
+
+<h3>9.4 Recomendaciones</h3>
+<p>Sistema de scoring personalizado con filtro de rating mínimo y sentimiento deseado. Calcula puntuación como 50% rating + 30% sentimiento + 20% popularidad. Muestra top 5 con gráfico de barras horizontales coloreadas por cluster.</p>
+
+<h3>9.5 Asistente LLM</h3>
+<p>Dos sub-pestañas: Chat interactivo en lenguaje natural y Resúmenes automáticos por restaurante. El chat mantiene contexto de la sesión y responde basado en datos reales.</p>
+
+<h2 id="sec10">10. Guía de Uso</h2>
+
+<h3>10.1 Instalación</h3>
+<pre>
+pip install -r requirements.txt
+playwright install chromium
+</pre>
+
+<h3>10.2 Configuración</h3>
+<p>Copiar <code>.env.example</code> a <code>.env</code> y configurar:</p>
+<pre>
+# Al menos uno para análisis de sentimiento
+ANTHROPIC_API_KEY=sk-...  # o OPENAI_API_KEY
+
+# Opcional: Yelp para más reseñas
+YELP_API_KEY=...
+
+# Opcional: para chat y resúmenes en dashboard
+GEMINI_API_KEY=...  # o GROQ_API_KEY
+</pre>
+
+<h3>10.3 Ejecución del Pipeline</h3>
+<pre>
+python run_pipeline.py
+</pre>
+<p>Esto ejecuta: descargar → limpiar → sentimiento → clustering → regresión → exportar Power BI.</p>
+
+<h3>10.4 Dashboard</h3>
+<pre>
+python -m streamlit run app.py
+</pre>
+
+<h3>10.5 Power BI</h3>
+<ol>
+  <li>Abrir <code>data/RestaurantReviews.pbix</code> en Power BI Desktop.</li>
+  <li>Configurar fuentes: Modelado → Administrar conexiones de datos → editar cada tabla apuntando a su CSV en <code>data/powerbi/</code>.</li>
+  <li>Las relaciones y 14 medidas DAX ya están incluidas.</li>
+  <li>Crear los visuales siguiendo la guía en <code>docs/powerbi_guide.md</code>.</li>
+</ol>
+
+<h3>10.6 Scraping Individual</h3>
+<pre>
+python scraper_playwright.py    # Google Maps
+python scraper_yelp.py          # Yelp API (requiere key)
+</pre>
+
+<h2 id="sec11">11. Preguntas Frecuentes del Examen (Pregunta → Respuesta)</h2>
+
+<h3>General del Proyecto</h3>
+
+<div style="background:#f0f4ff;padding:12pt;border-radius:5pt;margin:10pt 0;border-left:4px solid #0f3460;">
+<h4>P: ¿Qué hace este proyecto exactamente?</h4>
+<p><strong>R:</strong> Es una plataforma completa de análisis de reseñas de restaurantes en Panamá. Extrae reseñas reales de Google Maps (usando Playwright para scraping) y Yelp Fusion API (usando requests), las procesa con un pipeline ETL de 6 pasos, aplica Machine Learning (clustering con KMeans y regresión con Random Forest), analiza sentimiento por aspecto (comida, servicio, precio) usando LLMs como Claude o GPT, y presenta todo en dos dashboards: uno interactivo con Streamlit y otro profesional con Power BI usando esquema estrella.</p>
+</div>
+
+<div style="background:#f0f4ff;padding:12pt;border-radius:5pt;margin:10pt 0;border-left:4px solid #0f3460;">
+<h4>P: ¿Cuántas reseñas se recolectaron y de dónde vienen?</h4>
+<p><strong>R:</strong> Se recolectaron más de 1,264 reseñas reales de 10 restaurantes en Panamá. Las fuentes son Google Maps (principal, vía scraping con Playwright) y Yelp Fusion API (complementaria, vía requests). No se usaron reseñas generadas sintéticamente; todas son auténticas de usuarios reales.</p>
+</div>
+
+<div style="background:#f0f4ff;padding:12pt;border-radius:5pt;margin:10pt 0;border-left:4px solid #0f3460;">
+<h4>P: ¿Por qué usaron Python y no otro lenguaje?</h4>
+<p><strong>R:</strong> Python fue elegido por su ecosistema robusto de librerías para cada componente: pandas/numpy para datos, scikit-learn para ML, playwright/selenium para scraping, streamlit para dashboards, y múltiples clientes para LLMs (anthropic, openai, google-generativeai, groq). Ningún otro lenguaje tiene esta concentración de librerías especializadas para ciencia de datos y NLP.</p>
+</div>
+
+<div style="background:#f0f4ff;padding:12pt;border-radius:5pt;margin:10pt 0;border-left:4px solid #0f3460;">
+<h4>P: ¿Qué es un pipeline ETL y cómo funciona el de este proyecto?</h4>
+<p><strong>R:</strong> ETL significa Extract, Transform, Load (Extraer, Transformar, Cargar). Es un proceso que toma datos de múltiples fuentes, los limpia y transforma, y los carga en un formato listo para análisis. Nuestro pipeline tiene 6 pasos secuenciales orquestados por <code>run_pipeline.py</code>:<br><br>
+1. <strong>Descargar</strong> (extract): scraper_playwright.py obtiene datos de Google Maps, scraper_yelp.py de Yelp API.<br>
+2. <strong>Limpiar</strong> (transform): limpiar_datos.py elimina reseñas vacías, deduplica, normaliza texto.<br>
+3. <strong> Sentimiento</strong> (transform): analizar_sentimiento.py usa LLMs + keywords para clasificar sentimiento por aspecto.<br>
+4. <strong>Clustering</strong> (transform): clustering.py agrupa restaurantes con KMeans.<br>
+5. <strong>Regresión</strong> (transform): regresion.py predice ratings con Random Forest.<br>
+6. <strong>Exportar</strong> (load): exportar_powerbi.py genera CSVs en esquema estrella para Power BI.</p>
+</div>
+
+<h3>Scraping y Datos</h3>
+
+<div style="background:#f0f4ff;padding:12pt;border-radius:5pt;margin:10pt 0;border-left:4px solid #0f3460;">
+<h4>P: ¿Qué es Playwright y por qué lo usan para scraping?</h4>
+<p><strong>R:</strong> Playwright es una librería de Microsoft para automatización de navegadores web. La usamos porque Google Maps carga contenido dinámicamente con JavaScript (lazy-loading en la pestaña de opiniones). Playwright puede: (1) abrir un navegador Chromium headless (sin ventana visible), (2) navegar a la pestaña "Opiniones" de cada restaurante, (3) hacer scroll automático para que carguen más reseñas, (4) extraer el texto, rating, fecha y nombre del reseñador de cada opinión. Opera con locale es-PA, viewport 1920x1080, y user-agent de escritorio para simular un usuario real.</p>
+</div>
+
+<div style="background:#f0f4ff;padding:12pt;border-radius:5pt;margin:10pt 0;border-left:4px solid #0f3460;">
+<h4>P: ¿Qué es Selenium y por qué lo tienen como fallback?</h4>
+<p><strong>R:</strong> Selenium es otra librería de automatización de navegadores, más antigua que Playwright. Lo usamos como respaldo por si Playwright falla (por ejemplo, si Chromium no se puede instalar). Selenium usa ChromeDriver Manager para descargar automáticamente el driver compatible con el Chrome del usuario. Si Playwright funciona, Selenium no se ejecuta.</p>
+</div>
+
+<div style="background:#f0f4ff;padding:12pt;border-radius:5pt;margin:10pt 0;border-left:4px solid #0f3460;">
+<h4>P: ¿Qué es la API de Yelp y cómo la consumen?</h4>
+<p><strong>R:</strong> Yelp Fusion API es una API REST gratuita (con registro en developers.yelp.com) que permite buscar negocios y obtener reseñas. Nuestro script scraper_yelp.py hace dos tipos de llamadas: (1) GET /businesses/search para buscar restaurantes en Panamá con paginación (hasta 50 negocios), y (2) GET /businesses/{id}/reviews para obtener hasta 3 reseñas por negocio. Usa la librería requests de Python para hacer las llamadas HTTP con headers de autenticación.</p>
+</div>
+
+<div style="background:#f0f4ff;padding:12pt;border-radius:5pt;margin:10pt 0;border-left:4px solid #0f3460;">
+<h4>P: ¿Qué limpieza se le hace a los datos?</h4>
+<p><strong>R:</strong> En limpiar_datos.py se aplican 4 transformaciones: (1) Limpieza de texto: eliminación de caracteres especiales y normalización de espacios múltiples. (2) Filtrado: reseñas con menos de 5 caracteres o sin rating son descartadas. (3) Deduplicación: basada en la combinación de restaurante + los primeros 50 caracteres de la reseña. (4) Clasificación por rating: bueno (&gt;3.5), neutral (2.0-3.5), malo (≤2.0). La salida es data/reviews_clean.csv.</p>
+</div>
+
+<h3>Machine Learning</h3>
+
+<div style="background:#f0f4ff;padding:12pt;border-radius:5pt;margin:10pt 0;border-left:4px solid #0f3460;">
+<h4>P: ¿Qué es KMeans y por qué lo usaron?</h4>
+<p><strong>R:</strong> KMeans es un algoritmo de clustering no supervisado que agrupa datos en K grupos basándose en la distancia euclidiana entre puntos. Funciona así: (1) Selecciona K centroides aleatoriamente. (2) Asigna cada punto al centroide más cercano. (3) Recalcula los centroides como el promedio de los puntos asignados. (4) Repite hasta que los centroides no cambien. Lo usamos porque: es interpretable (los clusters tienen significado directo: Excelente, Bueno, Regular, Malo), es eficiente para pocos datos (10 restaurantes), y tiene pocos hiperparámetros. Usamos n_clusters=4, random_state=42 para reproducibilidad, y n_init=10 para evitar óptimos locales.</p>
+</div>
+
+<div style="background:#f0f4ff;padding:12pt;border-radius:5pt;margin:10pt 0;border-left:4px solid #0f3460;">
+<h4>P: ¿Qué features usan para el clustering y por qué esos pesos?</h4>
+<p><strong>R:</strong> Usamos 3 features normalizadas con StandardScaler: (1) rating_promedio (peso 0.4): representa la calidad percibida. (2) num_resenas (peso 0.2): representa la popularidad. (3) pct_positivo (peso 0.6): representa el sentimiento general. El peso más alto en pct_positivo (0.6) se debe a que el sentimiento es el indicador más confiable de satisfacción del cliente, mientras que el rating puede estar sesgado por valores extremos.</p>
+</div>
+
+<div style="background:#f0f4ff;padding:12pt;border-radius:5pt;margin:10pt 0;border-left:4px solid #0f3460;">
+<h4>P: ¿Qué es Random Forest y cómo predice ratings?</h4>
+<p><strong>R:</strong> Random Forest es un algoritmo de ML supervisado que usa múltiples árboles de decisión para hacer predicciones. Cada árboles se entrena con una muestra aleatoria de los datos (bootstrap) y usa un subconjunto aleatorio de features. La predicción final es el promedio de todos los árboles (para regresión). En nuestro caso, predice el rating numérico (1-5) de una reseña individual basado en 6 features: longitud del texto, sentimiento general, sentimiento por aspecto (comida, servicio, precio), y restaurante codificado. Usamos 100 árboles (n_estimators=100), train/test 80/20, y evaluamos con MAE, RMSE y R².</p>
+</div>
+
+<div style="background:#f0f4ff;padding:12pt;border-radius:5pt;margin:10pt 0;border-left:4px solid #0f3460;">
+<h4>P: ¿Qué significan las métricas MAE, RMSE y R²?</h4>
+<p><strong>R:</strong> <strong>MAE</strong> (Mean Absolute Error): error promedio absoluto entre predicciones y valores reales. Nuestro MAE de 0.52 significa que el modelo se equivoca en promedio medio punto de estrella. <strong>RMSE</strong> (Root Mean Squared Error): similar al MAE pero penaliza más los errores grandes (porque eleva al cuadrado). Nuestro RMSE de 0.83 indica que la mayoría de predicciones están dentro de 1 estrella. <strong>R²</strong> (Coeficiente de Determinación): indica qué porcentaje de la varianza explica el modelo. Nuestro R² de 0.26 significa que el modelo explica el 26% de la variabilidad del rating. Es moderado, esperado porque features textuales simples tienen capacidad predictiva limitada.</p>
+</div>
+
+<div style="background:#f0f4ff;padding:12pt;border-radius:5pt;margin:10pt 0;border-left:4px solid #0f3460;">
+<h4>P: ¿Por qué Random Forest y no Regresión Lineal?</h4>
+<p><strong>R:</strong> Random Forest fue elegido porque: (1) Maneja features mixtos (numéricos como longitud y categóricos como restaurante codificado) sin necesidad de escalado. (2) Es robusto a outliers (reseñas muy extremas no sesgan el modelo). (3) Provee feature importance (sabemos qué factores influyen más). (4) No asume linealidad. Regresión Lineal asume relación lineal entre features y target, que no existe en texto. SVM es más costoso computacionalmente y menos interpretable. Gradient Boosting sobreajusta con pocos datos.</p>
+</div>
+
+<div style="background:#f0f4ff;padding:12pt;border-radius:5pt;margin:10pt 0;border-left:4px solid #0f3460;">
+<h4>P: ¿Qué es StandardScaler y por qué lo usan?</h4>
+<p><strong>R:</strong> StandardScaler es una técnica de preprocesamiento que normaliza las features para que tengan media 0 y desviación estándar 1. Se calcula como: (x - media) / desviación_estándar. Lo usamos en KMeans porque el algoritmo se basa en distancias euclidianas. Sin escalado, num_resenas (valores entre 15-150) dominaría sobre rating_promedio (valores entre 4-5) simplemente por tener valores más grandes. Con StandardScaler, todas las features contribuyen equitativamente al cálculo de distancias.</p>
+</div>
+
+<h3>Análisis de Sentimiento y LLMs</h3>
+
+<div style="background:#f0f4ff;padding:12pt;border-radius:5pt;margin:10pt 0;border-left:4px solid #0f3460;">
+<h4>P: ¿Qué es un LLM y cómo lo usan para análisis de sentimiento?</h4>
+<p><strong>R:</strong> LLM significa Large Language Model (Modelo de Lenguaje Grande). Son modelos de IA entrenados con billions de texto que pueden entender y generar lenguaje humano. Los usamos para analizar sentimiento porque entienden el contexto y las sutilezas del lenguaje (ej: "la comida estaba bien pero el servicio fue un desastre" tiene sentimiento mixto). El flujo es: (1) Enviamos la reseña con un prompt que pide JSON estructurado. (2) El LLM responde con sentimiento_general, sentimiento_comida, sentimiento_servicio, sentimiento_precio y palabras_clave. (3) Parseamos la respuesta JSON y la guardamos.</p>
+</div>
+
+<div style="background:#f0f4ff;padding:12pt;border-radius:5pt;margin:10pt 0;border-left:4px solid #0f3460;">
+<h4>P: ¿Qué es el fallback basado en keywords?</h4>
+<p><strong>R:</strong> Es un método de respaldo que no usa IA. Tenemos un léxico de 50+ términos en español por cada aspecto (comida, servicio, precio). Por ejemplo, para comida: "delicioso", "rico", "sabroso" son positivos; "malo", "crudo", "frío" son negativos. El algoritmo cuenta cuántas palabras positivas y negativas hay en la reseña. Si hay más positivas → positivo. Si hay más negativas → negativo. Si hay igualdad o ninguna palabra del léxico → neutral. Se usa siempre para reseñas más allá del límite de 50 llamadas LLM, y como verificación cruzada.</p>
+</div>
+
+<div style="background:#f0f4ff;padding:12pt;border-radius:5pt;margin:10pt 0;border-left:4px solid #0f3460;">
+<h4>P: ¿Qué proveedores de LLM soportan y por qué?</h4>
+<p><strong>R:</strong> Soportamos 4 proveedores en orden de prioridad: (1) Anthropic Claude 3 Haiku (pago, el más preciso para análisis). (2) OpenAI GPT-4o-mini (pago, buena alternativa). (3) Google Gemini 1.5 Flash (gratuito con cuota). (4) Groq Llama 3 70B (gratuito, el más rápido). La función get_available_provider() detecta automáticamente qué API key está configurada y usa el primero disponible. Esto garantiza que el sistema funcione sin depender de un solo servicio.</p>
+</div>
+
+<div style="background:#f0f4ff;padding:12pt;border-radius:5pt;margin:10pt 0;border-left:4px solid #0f3460;">
+<h4>P: ¿Qué es el rate limiting y la caché LRU?</h4>
+<p><strong>R:</strong> <strong>Rate limiting</strong>: controla cuántas llamadas a la API se hacen por segundo (1 llamada/segundo por proveedor). Esto evita ser bloqueado por los proveedores de LLM. <strong>Caché LRU</strong> (Least Recently Used): almacena hasta 200 respuestas de LLM en memoria. Si alguien hace la misma pregunta dos veces, la segunda vez usa la respuesta cacheada en lugar de hacer una nueva llamada a la API. Esto reduce costos y tiempo de respuesta.</p>
+</div>
+
+<h3>Power BI y Esquema Estrella</h3>
+
+<div style="background:#f0f4ff;padding:12pt;border-radius:5pt;margin:10pt 0;border-left:4px solid #0f3460;">
+<h4>P: ¿Qué es un esquema estrella?</h4>
+<p><strong>R:</strong> Es un diseño de base de datos dimensional donde hay una tabla central de hechos (FactResenas) rodeada por tablas de dimensiones (DimRestaurante, DimFecha, DimSentimiento, DimRating). La tabla de hechos contiene los datos numéricos y las foreign keys. Las dimensiones contienen los atributos descriptivos. Se llama "estrella" porque la estructura se ve como una estrella con la tabla de hechos en el centro. Es ideal para Power BI porque permite filtros rápidos y agregaciones eficientes.</p>
+</div>
+
+<div style="background:#f0f4ff;padding:12pt;border-radius:5pt;margin:10pt 0;border-left:4px solid #0f3460;">
+<h4>P: ¿Qué son las measures DAX y cómo funcionan?</h4>
+<p><strong>R:</strong> DAX (Data Analysis Expressions) es el lenguaje de fórmulas de Power BI. Las measures son cálculos virtuales que se calculan en tiempo real cuando interactúas con el dashboard. No existen en el CSV, se calculan sobre la marcha. Ejemplos: <code>Total Reseñas = COUNTROWS(FactResenas)</code> cuenta todas las filas. <code>% Positivo = DIVIDE(CALCULATE(COUNTROWS(FactResenas), DimSentimiento[sentimiento_general] = "positivo"), [Total Reseñas])</code> calcula el porcentaje de reseñas positivas. La función DIVIDE evita errores de división por cero.</p>
+</div>
+
+<div style="background:#f0f4ff;padding:12pt;border-radius:5pt;margin:10pt 0;border-left:4px solid #0f3460;">
+<h4>P: ¿Qué hace el gauge de Scoring Compuesto?</h4>
+<p><strong>R:</strong> El gauge (velocímetro) muestra un índice compuesto de 0 a 5 que combina tres factores: (1) Rating Promedio × 0.5 (50% de peso): la calidad percibida. (2) % Positivo × 0.3 (30% de peso): el sentimiento general. (3) Actividad reciente × 0.2 (20% de peso): la proporción de reseñas recientes vs totales. La fórmula completa es: <code>[Rating Promedio] * 0.5 + [% Positivo] * 0.3 + DIVIDE(COUNTROWS(FactResenas), MAX(FactResenas[id_resena])) * 0.2 * 5</code>. El tercer término mide qué tan activo está el restaurante recientemente.</p>
+</div>
+
+<div style="background:#f0f4ff;padding:12pt;border-radius:5pt;margin:10pt 0;border-left:4px solid #0f3460;">
+<h4>P: ¿Cómo funciona el heatmap de satisfacción?</h4>
+<p><strong>R:</strong> Es una matrix de Power BI donde las filas son restaurantes y las columnas son los 3 aspectos (comida, servicio, precio). Cada celda muestra el porcentaje de sentimiento positivo con formato condicional: verde intenso = alto (cerca de 100%), blanco = medio, rojo = bajo (cerca de 0%). Se configura en Format → Conditional formatting → Background color con esquema Diverging (rojo-blanco-verde). Permite identificar visualmente los puntos débiles de cada restaurante.</p>
+</div>
+
+<div style="background:#f0f4ff;padding:12pt;border-radius:5pt;margin:10pt 0;border-left:4px solid #0f3460;">
+<h4>P: ¿Por qué el scatter chart no necesita bucket "Values" en mi versión de Power BI?</h4>
+<p><strong>R:</strong> En versiones recientes de Power BI (2026), el scatter chart puede funcionar sin el bucket "Details" o "Values". Si la tabla DimRestaurante ya tiene una fila por restaurante (dat granular), Power BI muestra automáticamente un punto por cada fila. El bucket "Values" en algunas versiones es para measures agregadas, no para detalles. Si cada punto representa un restaurante y los ejes X/Y tienen métricas por restaurante, el gráfico funciona correctamente sin necesidad de un campo adicional.</p>
+</div>
+
+<h3>Streamlit y Dashboard</h3>
+
+<div style="background:#f0f4ff;padding:12pt;border-radius:5pt;margin:10pt 0;border-left:4px solid #0f3460;">
+<h4>P: ¿Qué es Streamlit y por qué lo usan?</h4>
+<p><strong>R:</strong> Streamlit es un framework de Python para crear dashboards interactivos con código minimalista. Lo usamos porque: (1) Permite crear interfaces web con scripts Python puros (sin HTML/CSS/JS). (2) Tiene widgets nativos (sliders, selects, tabs). (3) Se integra directamente con pandas, matplotlib y我们的 LLM utils. (4) Soporta chat interactivo (st.chat_message). (5) Es fácil de deployar con <code>streamlit run app.py</code>. Nuestro dashboard tiene 5 pestañas: Resumen General, Análisis por Restaurante, Clustering, Recomendaciones y Asistente LLM.</p>
+</div>
+
+<div style="background:#f0f4ff;padding:12pt;border-radius:5pt;margin:10pt 0;border-left:4px solid #0f3460;">
+<h4>P: ¿Cómo funciona el chat con LLM en Streamlit?</h4>
+<p><strong>R:</strong> En la pestaña "Asistente LLM", el usuario escribe preguntas en lenguaje natural (ej: "¿Qué restaurante tiene mejor servicio?"). El flujo es: (1) Se captura el mensaje con st.chat_input. (2) Se construye un contexto con estadísticas agregadas de los DataFrames (no los datos crudos). (3) Se envía al LLM disponible (Claude, GPT, Gemini o Groq). (4) El LLM responde basándose exclusivamente en los datos reales. (5) Se muestra la respuesta con st.chat_message. El chat mantiene historial en session_state para conversaciones continuas.</p>
+</div>
+
+<h3>Arquitectura y Diseño</h3>
+
+<div style="background:#f0f4ff;padding:12pt;border-radius:5pt;margin:10pt 0;border-left:4px solid #0f3460;">
+<h4>P: ¿Por qué el pipeline es secuencial y no paralelo?</h4>
+<p><strong>R:</strong> El pipeline es secuencial porque cada paso depende del anterior: (1) No puedes limpiar datos que no has descargado. (2) No puedes analizar sentimiento de datos no limpios. (3) No puedes hacer clustering sin sentimientos calculados. (4) No puedes exportar a Power BI sin los clusters y regresión. Sin embargo, dentro de cada paso hay paralelismo: por ejemplo, el scraping de múltiples restaurantes puede hacerse concurrente, y las llamadas LLM se ejecutan en lote.</p>
+</div>
+
+<div style="background:#f0f4ff;padding:12pt;border-radius:5pt;margin:10pt 0;border-left:4px solid #0f3460;">
+<h4>P: ¿Cómo se mantiene la actualización de datos?</h4>
+<p><strong>R:</strong> El pipeline está diseñado para ejecutarse múltiples veces: (1) La primera vez se genera el .pbix con el modelo tabular completo. (2) En ejecuciones posteriores, solo se actualizan los CSVs en data/powerbi/. (3) En Power BI Desktop se hace clic en Refresh para recargar los datos. (4) Los visuales se conservan intactos — no es necesario recrear nada. Esto permite agregar nuevos restaurantes o reseñas sin perder el trabajo visual.</p>
+</div>
+
+<div style="background:#f0f4ff;padding:12pt;border-radius:5pt;margin:10pt 0;border-left:4px solid #0f3460;">
+<h4>P: ¿Qué es el PAT (Personal Access Token) de Yelp y cómo se usa?</h4>
+<p><strong>R:</strong> El PAT es un token de autenticación que obtienes al registrarte en developers.yelp.com. Se guarda en el archivo .env como YELP_API_KEY. El script scraper_yelp.py lo lee con python-dotenv y lo envía en el header de cada llamada HTTP: <code>Authorization: Bearer {YELP_API_KEY}</code>. La API es gratuita con un límite de 500 llamadas por día. Sin el token, la API rechaza las peticiones con error 401.</p>
+</div>
+
+<div style="background:#f0f4ff;padding:12pt;border-radius:5pt;margin:10pt 0;border-left:4px solid #0f3460;">
+<h4>P: ¿Qué diferencia hay entre Streamlit y Power BI en este proyecto?</h4>
+<p><strong>R:</strong> Son complementarios: <strong>Streamlit</strong> es para interactividad en tiempo real: filtros dinámicos, chat con LLM, gráficos que se actualizan al instante. Es ideal para análisis exploratorio y demostraciones. <strong>Power BI</strong> es para visualizaciones profesionales y presentaciones ejecutivas: esquema estrella, measures DAX, formato condicional, heatmaps. Es ideal para reportes formales. Ambos usan los mismos datos CSV pero con diferentes niveles de interactividad y presentación.</p>
+</div>
+
+<h2 id="sec12">12. Conclusiones</h2>
+
+<p>1. <strong>Dataset Robusto:</strong> Se recolectaron reseñas reales de múltiples fuentes (Google Maps, Yelp), superando las 1000 reseñas planificadas, sin usar datos generados sintéticamente.</p>
+
+<p>2. <strong>ML Dual:</strong> Se implementaron dos técnicas de Machine Learning —KMeans clustering (no supervisado) para segmentar restaurantes y Random Forest Regressor (supervisado) para predecir ratings— demostrando dominio de ambos paradigmas de aprendizaje automático.</p>
+
+<p>3. <strong>Pipeline Modular:</strong> La arquitectura de 6 pasos permite ejecutar componentes de forma independiente, facilitando depuración y mantenimiento. Cada script tiene una responsabilidad única y bien definida.</p>
+
+<p>4. <strong>Dashboards Complementarios:</strong> Streamlit ofrece interactividad en tiempo real con chat LLM integrado, mientras que Power BI proporciona visualizaciones avanzadas con esquema estrella profesional para presentaciones ejecutivas.</p>
+
+<p>5. <strong>LLM Universal:</strong> El adaptador de 4 proveedores (Anthropic, OpenAI, Gemini, Groq) garantiza que el sistema funcione sin depender de un solo servicio, con opciones gratuitas disponibles.</p>
+
+<p>6. <strong>KPIs Exhaustivos:</strong> 11 indicadores clave cubren todas las dimensiones del análisis: volumen, calidad, sentimiento, tendencias temporales, y predicciones.</p>
+
+<p>7. <strong>Escalabilidad:</strong> El diseño permite agregar más restaurantes, fuentes de datos, y modelos ML sin reestructurar la arquitectura base.</p>
+
+</body>
+</html>
