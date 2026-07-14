@@ -10,6 +10,8 @@ PIPELINE = [
     ("limpiar_datos.py", "Limpiando datos..."),
     ("analizar_sentimiento.py", "Analizando sentimiento..."),
     ("clustering.py", "Generando clusters..."),
+    ("regresion.py", "Entrenando modelo de regresion Random Forest..."),
+    ("exportar_powerbi.py", "Exportando esquema estrella para Power BI..."),
 ]
 
 

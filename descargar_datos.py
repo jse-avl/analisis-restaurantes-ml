@@ -12,6 +12,7 @@ RUTA = os.path.dirname(os.path.abspath(__file__))
 RUTA_DATA = os.path.join(RUTA, "data")
 RUTA_FALLBACK = os.path.join(RUTA_DATA, "restaurantes_panama.csv")
 RUTA_REAL = os.path.join(RUTA_DATA, "reviews_real.csv")
+RUTA_YELP = os.path.join(RUTA_DATA, "reviews_yelp.csv")
 RUTA_SALIDA = os.path.join(RUTA_DATA, "reviews.csv")
 
 
@@ -162,6 +163,24 @@ def merge_con_fallback(scraped, fallback):
     return result
 
 
+def usar_yelp():
+    if not os.path.exists(RUTA_YELP):
+        print("Ejecutando scraper Yelp Fusion API...")
+        result = subprocess.run(
+            [sys.executable, os.path.join(RUTA, "scraper_yelp.py")],
+            capture_output=True, text=True, timeout=300,
+        )
+        if result.returncode != 0:
+            print(f"  Yelp fallo: {result.stderr[:200]}")
+            return []
+    if os.path.exists(RUTA_YELP):
+        with open(RUTA_YELP, "r", encoding="utf-8") as f:
+            data = list(csv.DictReader(f))
+        print(f"Yelp: {len(data)} resenas")
+        return data
+    return []
+
+
 def guardar_csv(data, ruta):
     os.makedirs(os.path.dirname(ruta), exist_ok=True)
     campos = ["restaurante", "categoria", "barrio", "rating", "reseña", "sentimiento", "fecha"]
@@ -206,8 +225,12 @@ def main():
     elif fallback:
         data = fallback
     else:
-        print("ERROR: No hay datos disponibles")
-        return
+        data = []
+
+    # Strategy 4: Yelp Fusion API (always append if available)
+    yelp_data = usar_yelp()
+    if yelp_data:
+        data.extend(yelp_data)
 
     if data:
         guardar_csv(data, RUTA_SALIDA)

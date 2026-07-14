@@ -1,4 +1,5 @@
 import os
+import json
 import csv
 import pandas as pd
 import numpy as np
@@ -35,11 +36,12 @@ colores_cluster = {
 st.title("🍽️ Plataforma de Analisis de Resenas de Restaurantes")
 st.markdown("### Panama | Grupo 5: Christian Duraty, Yireikis Abrego, Jorge Izarra, Jose Avila")
 
-tab1, tab2, tab3, tab4 = st.tabs([
+tab1, tab2, tab3, tab4, tab5 = st.tabs([
     "📊 Resumen General",
     "🔍 Analisis por Restaurante",
-    "📈 Clustering",
-    "⭐ Recomendaciones"
+    "📈 Clustering y Regresion",
+    "⭐ Recomendaciones",
+    "🤖 Asistente LLM"
 ])
 
 with tab1:
@@ -65,6 +67,24 @@ with tab1:
     ax.set_ylabel("Cantidad de Resenas")
     ax.tick_params(axis='x', rotation=0)
     st.pyplot(fig)
+
+    st.subheader("Distribucion de Sentimiento por Aspecto")
+    if 'sentimiento_comida' in df_reviews.columns:
+        col_a1, col_a2, col_a3 = st.columns(3)
+        for col_a, aspecto, color_a in [
+            (col_a1, "comida", "#2ecc71"),
+            (col_a2, "servicio", "#3498db"),
+            (col_a3, "precio", "#e67e22")
+        ]:
+            col_sent = f"sentimiento_{aspecto}"
+            counts = df_reviews[col_sent].value_counts()
+            fig, ax = plt.subplots(figsize=(4, 3))
+            colors_pie = {'positivo': '#2ecc71', 'neutral': '#f39c12', 'negativo': '#e74c3c'}
+            pie_colors = [colors_pie.get(s, '#95a5a6') for s in counts.index]
+            ax.pie(counts.values, labels=counts.index, colors=pie_colors, autopct='%1.0f%%', startangle=90)
+            ax.set_title(aspecto.capitalize())
+            with col_a:
+                st.pyplot(fig)
 
     st.subheader("Tabla de Restaurantes")
 
@@ -244,6 +264,46 @@ with tab3:
     stats_cluster.columns = ['Restaurantes', 'Rating Prom.', 'Total Resenas', '% Positivo Prom.']
     st.dataframe(stats_cluster, use_container_width=True)
 
+    st.subheader("Modelo de Regresion (Random Forest)")
+    ruta_metricas = os.path.join(os.path.dirname(__file__), "data", "regresion_metrics.json")
+    ruta_resultados = os.path.join(os.path.dirname(__file__), "data", "regresion_resultados.csv")
+
+    if os.path.exists(ruta_metricas):
+        with open(ruta_metricas, "r", encoding="utf-8") as f:
+            metricas = json.load(f)
+
+        col_m1, col_m2, col_m3, col_m4 = st.columns(4)
+        with col_m1:
+            st.metric("MAE", metricas.get("mae", "N/A"))
+        with col_m2:
+            st.metric("RMSE", metricas.get("rmse", "N/A"))
+        with col_m3:
+            st.metric("R²", metricas.get("r2", "N/A"))
+        with col_m4:
+            st.metric("Muestras de prueba", metricas.get("test_samples", "N/A"))
+
+        col_m5, col_m6 = st.columns(2)
+        with col_m5:
+            st.subheader("Importancia de Features")
+            feat_imp = metricas.get("feature_importance", {})
+            if feat_imp:
+                df_feat = pd.DataFrame(list(feat_imp.items()), columns=["Feature", "Importancia"])
+                df_feat = df_feat.sort_values("Importancia", ascending=True)
+                fig, ax = plt.subplots(figsize=(8, 3))
+                ax.barh(df_feat["Feature"], df_feat["Importancia"], color="#9b59b6")
+                ax.set_xlabel("Importancia")
+                st.pyplot(fig)
+
+        with col_m6:
+            if os.path.exists(ruta_resultados):
+                df_result = pd.read_csv(ruta_resultados)
+                st.subheader("Rating Real vs Predicho (primeras 20)")
+                st.dataframe(df_result.head(20), use_container_width=True, hide_index=True)
+
+        st.info("**Justificación del Modelo:** Random Forest Regressor fue seleccionado porque maneja features mixtos (numéricos + categóricos), es robusto a outliers, no requiere escalado de datos, y provee importancia de features interpretable para entender qué factores influyen más en el rating.")
+    else:
+        st.info("Ejecuta primero el pipeline de regresion: `python regresion.py`")
+
 with tab4:
     st.header("Recomendaciones de Restaurantes")
 
@@ -302,3 +362,24 @@ with tab4:
         st.dataframe(df_top, use_container_width=True, hide_index=True)
     else:
         st.warning("No hay restaurantes que cumplan con los criterios seleccionados.")
+
+with tab5:
+    st.header("🤖 Asistente LLM - Consulta en Lenguaje Natural")
+
+    from asistente_llm import mostrar_chat, mostrar_resumen_restaurante
+
+    sub_tab1, sub_tab2 = st.tabs(["💬 Chat con los Datos", "📝 Resumenes Automaticos"])
+
+    with sub_tab1:
+        st.markdown("Haz preguntas en lenguaje natural sobre los datos, por ejemplo:")
+        st.caption('"Que restaurante tiene mejor servicio?" | "Resume las resenas negativas" | "Cual es la tendencia de sentimiento?"')
+        mostrar_chat(df_reviews, df_clusters)
+
+    with sub_tab2:
+        restaurante = st.selectbox(
+            "Selecciona un restaurante para ver su resumen automatico",
+            sorted(df_reviews['restaurante'].unique()),
+            key="resumen_selector"
+        )
+        if restaurante:
+            mostrar_resumen_restaurante(df_reviews, restaurante)

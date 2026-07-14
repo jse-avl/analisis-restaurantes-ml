@@ -1,0 +1,18 @@
+id_fecha,fecha_completa,año,mes,nombre_mes,dia,dia_semana,nombre_dia,trimestre
+20260513,Hace 2 meses,2026,5,Mayo,13,3,Miércoles,2
+20260413,Hace 3 meses,2026,4,Abril,13,1,Lunes,2
+20260213,Hace 5 meses,2026,2,Febrero,13,5,Viernes,1
+20251213,Hace 7 meses,2025,12,Diciembre,13,6,Sábado,4
+1,Editado Hace un año,0,0,Desconocido,0,0,Desconocido,0
+20250813,Editado Hace 11 meses,2025,8,Agosto,13,3,Miércoles,3
+20260313,Hace 4 meses,2026,3,Marzo,13,5,Viernes,1
+20230713,Hace 3 años,2023,7,Julio,13,4,Jueves,3
+20251013,Hace 9 meses,2025,10,Octubre,13,1,Lunes,4
+20250913,Hace 10 meses,2025,9,Septiembre,13,6,Sábado,3
+20251113,Hace 8 meses,2025,11,Noviembre,13,4,Jueves,4
+20260113,Hace 6 meses,2026,1,Enero,13,2,Martes,1
+20240713,Hace 2 años,2024,7,Julio,13,6,Sábado,3
+20220713,Hace 4 años,2022,7,Julio,13,3,Miércoles,3
+20210713,Hace 5 años,2021,7,Julio,13,2,Martes,3
+20200713,Editado Hace 6 años,2020,7,Julio,13,1,Lunes,3
+20190713,Hace 7 años,2019,7,Julio,13,6,Sábado,3

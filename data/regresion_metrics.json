@@ -1,0 +1,26 @@
+{
+  "modelo": "RandomForestRegressor",
+  "n_estimators": 100,
+  "features": [
+    "longitud",
+    "sentimiento_num",
+    "sentimiento_comida_num",
+    "sentimiento_servicio_num",
+    "sentimiento_precio_num",
+    "restaurante_id"
+  ],
+  "train_samples": 1011,
+  "test_samples": 253,
+  "mae": 0.4923,
+  "mse": 0.6184,
+  "rmse": 0.7864,
+  "r2": 0.1777,
+  "feature_importance": {
+    "longitud": 0.5028,
+    "sentimiento_num": 0.2332,
+    "restaurante_id": 0.1622,
+    "sentimiento_comida_num": 0.0481,
+    "sentimiento_servicio_num": 0.0376,
+    "sentimiento_precio_num": 0.0161
+  }
+}

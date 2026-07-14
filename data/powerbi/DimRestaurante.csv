@@ -1,0 +1,11 @@
+restaurante,rating_promedio,num_resenas,pct_positivo,categoria,barrio,cluster,id_restaurante
+Azahar Restaurant,4.718120805369128,149,89.93288590604027,,,Excelente,1
+Expreso santeño,4.385714285714286,140,77.85714285714286,,,Bueno,2
+FONDA PALZAR (La del Manguito),4.705882352941177,68,38.23529411764706,,,Regular,3
+Frank's Place,4.786666666666667,150,92.0,,,Excelente,4
+La Pulpería | Casco Antiguo,4.793333333333333,150,94.66666666666667,,,Excelente,5
+Restaurante El Expreso Santeño,4.557046979865772,149,48.322147651006716,,,Malo,6
+Restaurante Expreso Santeño La Morelos,5.0,15,46.666666666666664,,,Regular,7
+Restaurante Parkin 507,4.314685314685315,143,34.96503496503497,,,Malo,8
+Sabroso Panamá,4.846666666666667,150,94.66666666666667,,,Excelente,9
+Terrat,4.28,150,85.33333333333334,,,Bueno,10

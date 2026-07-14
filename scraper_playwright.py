@@ -17,11 +17,16 @@ RUTA_DATA = os.path.join(os.path.dirname(__file__), "data")
 # Queries de busqueda para variety
 BUSQUEDAS = [
     "restaurantes en Panama",
+    "mejores restaurantes Panama",
+    "restaurantes populares Panama ciudad",
+    "comida panameña Panama",
+    "restaurantes Casco Viejo Panama",
+    "restaurantes Obarrio Panama",
 ]
 
-MAX_RESTAURANTES = 6
-MAX_SCROLL_REVIEWS = 15
-MAX_REVIEWS_PER_RESTAURANT = 100
+MAX_RESTAURANTES = 30
+MAX_SCROLL_REVIEWS = 30
+MAX_REVIEWS_PER_RESTAURANT = 150
 
 
 def search_restaurants(page, query, max_restaurants=20):
@@ -264,14 +269,14 @@ def main():
         page = context.new_page()
 
         for query in BUSQUEDAS:
-            if len(all_reviews) >= 400:
+            if len(all_reviews) >= 1400:
                 break
 
             restaurants = search_restaurants(page, query, max_restaurants=MAX_RESTAURANTES)
             print(f"  Encontrados: {len(restaurants)}")
 
             for i, r in enumerate(restaurants):
-                if len(all_reviews) >= 400:
+                if len(all_reviews) >= 1400:
                     break
                 if r["url"] in visited_urls:
                     continue
